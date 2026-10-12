@@ -1,5 +1,5 @@
 ---
-import siteConfig from '../../../site.config.json';
+import siteConfig from '../../../../school.config.json';
 import Icon from './Icon.astro';
 
 interface Props {
@@ -7,7 +7,6 @@ interface Props {
 }
 
 const schoolTitle = siteConfig.schoolName.en;
-const disclaimer = siteConfig.demoDisclaimer.en;
 ---
 
 <!-- Office Contact & Enquiry Section (Light Institutional Section) -->
@@ -202,11 +201,11 @@ const disclaimer = siteConfig.demoDisclaimer.en;
           <img src="/images/crest.svg" alt="" width="40" height="46" class="footer-crest" />
           <div>
             <h4 class="footer-school-title">{schoolTitle}</h4>
-            <span class="footer-estd">Estd. 1954 • Pala, Kottayam</span>
+            <span class="footer-estd">Estd. {siteConfig.foundedYear} • {siteConfig.location.en}</span>
           </div>
         </div>
         <p class="footer-about-snippet">
-          Aided Higher Secondary School under the Corporate Management of Orthodox Syrian Church, recognized by the General Education Department, Kerala.
+          {siteConfig.about?.footerSnippet || `Aided Higher Secondary School under the ${siteConfig.management || 'Corporate Management'}, recognized by the General Education Department, Kerala.`}
         </p>
       </div>
 
@@ -217,7 +216,7 @@ const disclaimer = siteConfig.demoDisclaimer.en;
           <li><a href="/">Home</a></li>
           <li><a href="#about">About the School</a></li>
           <li><a href="#academics">Academic Programs</a></li>
-          <li><a href="#admissions">Admissions 2026–27</a></li>
+          <li><a href="#admissions">Admissions {siteConfig.admissions?.academicYear || '2026–27'}</a></li>
           <li><a href="#news">News & Events</a></li>
           <li><a href="#merit">Merit Roll & Toppers</a></li>
         </ul>
@@ -239,10 +238,10 @@ const disclaimer = siteConfig.demoDisclaimer.en;
       <div class="footer-col-info">
         <h4 class="footer-heading">Board Affiliation</h4>
         <ul class="footer-meta-list">
-          <li><strong>Board:</strong> Kerala State Board</li>
-          <li><strong>High School Code:</strong> 05042</li>
-          <li><strong>Higher Secondary:</strong> 05018</li>
-          <li><strong>Sub-District:</strong> Meenachil Taluk</li>
+          <li><strong>Board:</strong> {siteConfig.affiliation.board}</li>
+          <li><strong>High School Code:</strong> {siteConfig.affiliation.schoolCode}</li>
+          <li><strong>Higher Secondary:</strong> {siteConfig.affiliation.higherSecondaryCode}</li>
+          <li><strong>Sub-District:</strong> {siteConfig.affiliation.subDistrict || siteConfig.location.subDistrict}</li>
         </ul>
       </div>
     </div>

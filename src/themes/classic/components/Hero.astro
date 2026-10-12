@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { resolveI18n } from '../../../content.config';
+import siteConfig from '../../../../school.config.json';
 import Figure from './Figure.astro';
 import Icon from './Icon.astro';
 
@@ -13,12 +14,14 @@ const heroSlidesCollection = await getCollection('heroSlides');
 const slides = heroSlidesCollection.map(s => s.data);
 
 const copy = {
-  badge: "Academic Year 2026–27",
-  headline: "Admissions Open for Classes 1, 5 and 11 (2026–27)",
-  subhead: "Application forms available at the school office counter and online until 15 May 2026. Higher Secondary Science (PCMB/PCMC) and Commerce streams.",
+  badge: siteConfig.admissions?.badge || `Academic Year ${siteConfig.admissions?.academicYear || '2026–27'}`,
+  headline: siteConfig.admissions?.headline || "Admissions Open for Classes 1, 5 and 11 (2026–27)",
+  subhead: siteConfig.admissions?.subhead || "Application forms available at the school office counter and online. Higher Secondary Science and Commerce streams.",
   primaryCta: "Download Prospectus & Form",
   secondaryCta: "View Eligibility & Fees"
 };
+
+const campusBadge = siteConfig.abbreviation ? `${siteConfig.abbreviation} CAMPUS` : 'CAMPUS';
 ---
 
 <section class="hero-section" aria-labelledby="hero-heading">
@@ -54,9 +57,9 @@ const copy = {
                   />
                 </div>
 
-                <!-- Solid Navy Caption Bar (Never gradient or glass) -->
+                <!-- Solid Caption Bar (Never gradient or glass) -->
                 <div class="slide-caption-bar" aria-hidden="true">
-                  <span class="slide-caption-badge">MBM CAMPUS</span>
+                  <span class="slide-caption-badge">{campusBadge}</span>
                   <span class="slide-caption-title">{caption.text}</span>
                   <span class="slide-caption-counter">({index + 1} / {slides.length})</span>
                 </div>

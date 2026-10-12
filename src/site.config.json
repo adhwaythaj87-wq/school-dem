@@ -5,19 +5,40 @@
   "shortName": {
     "en": "Mar Baselios HSS"
   },
-  "location": {
-    "en": "Pala, Kottayam, Kerala"
-  },
+  "abbreviation": "MBM",
   "motto": {
     "en": "Faith, Truth, and Service"
   },
   "foundedYear": 1954,
+  "management": "Corporate Management of Orthodox Syrian Church",
+
+  "location": {
+    "en": "Pala, Kottayam, Kerala",
+    "city": "Pala",
+    "subDistrict": "Meenachil Taluk",
+    "district": "Kottayam",
+    "state": "Kerala",
+    "pinCode": "686575",
+    "streetAddress": "College Road",
+    "address": "College Road, Pala, Kottayam District, Kerala - 686575, India"
+  },
+
   "affiliation": {
     "board": "Kerala State Board of Education",
     "schoolCode": "05042",
     "higherSecondaryCode": "05018",
-    "grades": "Classes 1 to 12 (HS & HSS: Science & Commerce)"
+    "subDistrict": "Meenachil Taluk",
+    "grades": "Classes 1 to 12 (LP, UP, HS & HSS)",
+    "medium": "English (Kerala State Syllabus)"
   },
+
+  "statistics": {
+    "studentCount": "1,450 Students",
+    "staffCount": "68 Staff Members",
+    "campusSize": "4.5-acre campus",
+    "serviceYears": "72 Years of Service"
+  },
+
   "contact": {
     "phone": "+91 4822 212450",
     "altPhone": "+91 4822 212451",
@@ -27,15 +48,44 @@
     "whatsappNumber": "919447123450",
     "whatsappUrl": "https://wa.me/919447123450?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions."
   },
+
+  "principal": {
+    "name": "Rev. Fr. Mathew Karottu",
+    "shortName": "Fr. Mathew Karottu",
+    "qualifications": "M.Sc., M.Ed., M.Phil.",
+    "designation": "Principal & Head of Institution",
+    "photo": "/images/principal.jpg",
+    "deskTitle": "Seventy years rooted in disciplined study and quiet service",
+    "messageParagraphs": [
+      "Dear Parents, Guardians, and Students,",
+      "Founded in 1954, Mar Baselios Memorial Higher Secondary School was established to offer rigorous, reliable secondary education to children from Pala and surrounding panchayats. We maintain a straightforward approach to schooling: steady daily attendance, careful attention to the state board syllabus, and a quiet insistence on honesty and mutual respect.",
+      "Our teachers work closely with each class, identifying learning difficulties early in the term rather than waiting for board examinations. Whether in our science laboratories, library, or classrooms, our priority remains the steady intellectual and personal development of each student under our care."
+    ]
+  },
+
+  "about": {
+    "sectionTag": "ABOUT OUR SCHOOL",
+    "tagline": "Providing dependable schooling in Meenachil Taluk since 1954",
+    "leadText": "Mar Baselios Memorial Higher Secondary School was established to provide sound, principled schooling to young men and women in Pala and neighboring agricultural panchayats. Operating under the corporate management of the Orthodox Syrian Church, the school welcomes students of all backgrounds and faiths.",
+    "secondaryText": "The 4.5-acre campus includes separate laboratories for physics, chemistry, biology, and computer applications, a well-stocked general library, and a full-size football ground. Extracurricular training includes active National Cadet Corps (Army Wing), Junior Red Cross, and National Service Scheme units.",
+    "footerSnippet": "Aided Higher Secondary School under the Corporate Management of Orthodox Syrian Church, recognized by the General Education Department, Kerala.",
+    "gallerySubtitle": "Laboratories, lecture halls, campus grounds, and student activities in Pala."
+  },
+
+  "admissions": {
+    "academicYear": "2026–27",
+    "badge": "Academic Year 2026–27",
+    "headline": "Admissions Open for Classes 1, 5 and 11 (2026–27)",
+    "subhead": "Application forms available at the school office counter and online until 15 May 2026. Higher Secondary Science (PCMB/PCMC) and Commerce streams.",
+    "classesOffered": "Admissions for Classes 1, 5, 8 & Plus One (Science and Commerce)",
+    "counterTimings": "Monday to Friday, 9:00 AM to 4:00 PM"
+  },
+
   "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15732.123456789!2d76.6800!3d9.7100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cd123456789%3A0x123456789abcdef!2sPala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   "mapExternalUrl": "https://maps.google.com/?q=Pala+Kottayam+Kerala",
   "theme": "classic",
   "defaultLanguage": "en",
   "languages": ["en"],
-  "isDemo": false,
-  "demoDisclaimer": {
-    "en": "Official institutional portal of Mar Baselios Memorial Higher Secondary School, Pala."
-  },
   "socialLinks": [
     { "name": "Facebook", "url": "https://facebook.com", "icon": "facebook" },
     { "name": "YouTube", "url": "https://youtube.com", "icon": "youtube" }
@@ -74,7 +124,7 @@
     {
       "id": "bus-routes",
       "label": { "en": "School Bus Routes" },
-      "url": "#facts",
+      "url": "#about",
       "icon": "bus"
     },
     {

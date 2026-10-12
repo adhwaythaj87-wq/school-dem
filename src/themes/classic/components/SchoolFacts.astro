@@ -1,15 +1,23 @@
 ---
-import siteConfig from '../../../site.config.json';
+import siteConfig from '../../../../school.config.json';
 import Figure from './Figure.astro';
 
 interface Props {
   currentLang?: string;
 }
 
+const founded = siteConfig.foundedYear;
+const yearsOfService = siteConfig.statistics?.serviceYears || `${new Date().getFullYear() - founded} Years of Service`;
+const schoolName = siteConfig.schoolName.en;
+const city = siteConfig.location.city || siteConfig.location.en;
+const subDistrict = siteConfig.location.subDistrict || city;
+const management = siteConfig.management || 'Corporate Educational Agency';
+const campusSize = siteConfig.statistics?.campusSize || 'spacious campus';
+
 const facts = [
   {
     label: "Year Established",
-    value: "1954 (72 Years of Service)"
+    value: `${founded} (${yearsOfService})`
   },
   {
     label: "Affiliation & Board",
@@ -25,29 +33,33 @@ const facts = [
   },
   {
     label: "Grades Offered",
-    value: "Classes 1 to 12 (LP, UP, HS & HSS)"
+    value: `${siteConfig.affiliation.grades}`
   },
   {
     label: "Medium of Instruction",
-    value: "English (Kerala State Syllabus)"
+    value: `${siteConfig.affiliation.medium}`
   },
   {
     label: "Student Body (Approx.)",
-    value: "1,450 Students"
+    value: `${siteConfig.statistics.studentCount}`
   },
   {
     label: "Teaching & Non-Teaching Staff",
-    value: "68 Staff Members"
+    value: `${siteConfig.statistics.staffCount}`
   }
 ];
+
+const aboutTagline = siteConfig.about?.tagline || `Providing dependable schooling in ${subDistrict} since ${founded}`;
+const leadText = siteConfig.about?.leadText || `${schoolName} was established to provide sound, principled schooling to young men and women in ${city} and neighboring areas. Operating under the ${management}, the school welcomes students of all backgrounds and faiths.`;
+const secondaryText = siteConfig.about?.secondaryText || `The ${campusSize} includes separate laboratories for physics, chemistry, biology, and computer applications, a well-stocked general library, and a full-size ground. Extracurricular training includes active student development units.`;
 ---
 
 <section class="facts-section" id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="facts-header">
-      <span class="section-tag">ABOUT OUR SCHOOL</span>
+      <span class="section-tag">{siteConfig.about?.sectionTag || "ABOUT OUR SCHOOL"}</span>
       <h2 id="about-heading" class="facts-title">
-        Providing dependable schooling in Meenachil Taluk since 1954
+        {aboutTagline}
       </h2>
     </div>
 
@@ -55,16 +67,16 @@ const facts = [
       <!-- Left: Institutional Narrative + Classroom photo -->
       <div class="facts-narrative">
         <p class="lead-text">
-          Mar Baselios Memorial Higher Secondary School was established to provide sound, principled schooling to young men and women in Pala and neighboring agricultural panchayats. Operating under the corporate management of the Orthodox Syrian Church, the school welcomes students of all backgrounds and faiths.
+          {leadText}
         </p>
 
         <p class="secondary-text">
-          The 4.5-acre campus includes separate laboratories for physics, chemistry, biology, and computer applications, a well-stocked general library, and a full-size football ground. Extracurricular training includes active National Cadet Corps (Army Wing), Junior Red Cross, and National Service Scheme units.
+          {secondaryText}
         </p>
 
         <Figure
           src="/images/classroom.jpg"
-          alt="Classroom session at Mar Baselios Memorial Higher Secondary School"
+          alt={`Classroom session at ${schoolName}`}
           aspectRatio="16/9"
           class="facts-inline-photo"
           caption="Regular classroom instruction at the high school wing."

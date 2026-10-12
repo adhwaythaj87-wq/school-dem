@@ -1,5 +1,5 @@
 ---
-import siteConfig from '../../../site.config.json';
+import siteConfig from '../../../../school.config.json';
 import '../../../styles/tokens.css';
 import '../../../styles/base.css';
 
@@ -9,9 +9,16 @@ interface Props {
   image?: string;
 }
 
+const schoolName = siteConfig.schoolName.en;
+const locationString = siteConfig.location.en;
+const locality = siteConfig.location.city || 'Kerala';
+const street = siteConfig.location.streetAddress || siteConfig.contact.address;
+const pincode = siteConfig.location.pinCode || '';
+const stateName = siteConfig.location.state || 'Kerala';
+
 const {
-  title = `${siteConfig.schoolName.en} | Pala, Kottayam`,
-  description = 'Mar Baselios Memorial Higher Secondary School, Pala, Kottayam, Kerala. Kerala State Board affiliated, Classes 1 to 12. Admissions, fees, circulars, and academic streams.',
+  title = `${schoolName} | ${locationString}`,
+  description = `${schoolName}, ${locationString}. ${siteConfig.affiliation.board} affiliated, ${siteConfig.affiliation.grades}. Admissions, fees, circulars, and academic streams.`,
   image = '/images/hero.jpg'
 } = Astro.props;
 
@@ -22,7 +29,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const schoolJsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  "name": siteConfig.schoolName.en,
+  "name": schoolName,
   "url": siteUrl,
   "logo": `${siteUrl}/images/crest.svg`,
   "image": `${siteUrl}/images/hero.jpg`,
@@ -32,10 +39,10 @@ const schoolJsonLd = {
   "email": siteConfig.contact.email,
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "College Road",
-    "addressLocality": "Pala",
-    "addressRegion": "Kerala",
-    "postalCode": "686575",
+    "streetAddress": street,
+    "addressLocality": locality,
+    "addressRegion": stateName,
+    "postalCode": pincode,
     "addressCountry": "IN"
   },
   "geo": {

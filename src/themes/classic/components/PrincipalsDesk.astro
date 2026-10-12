@@ -1,9 +1,31 @@
 ---
+import siteConfig from '../../../../school.config.json';
 import Figure from './Figure.astro';
 
 interface Props {
   currentLang?: string;
 }
+
+const principal = siteConfig.principal;
+const schoolName = siteConfig.schoolName.en;
+const shortName = siteConfig.shortName.en;
+const city = siteConfig.location.city || siteConfig.location.en;
+const founded = siteConfig.foundedYear;
+
+const principalPhoto = principal.photo || '/images/principal.jpg';
+const principalName = principal.name || 'Head of Institution';
+const principalShortName = principal.shortName || principalName;
+const principalDegrees = principal.qualifications || 'M.Sc., M.Ed.';
+const principalRole = principal.designation || 'Principal & Head of Institution';
+const deskTitle = principal.deskTitle || `Rooted in disciplined study and quiet service since ${founded}`;
+
+const paragraphs = principal.messageParagraphs && principal.messageParagraphs.length > 0
+  ? principal.messageParagraphs
+  : [
+      "Dear Parents, Guardians, and Students,",
+      `Founded in ${founded}, ${schoolName} was established to offer rigorous, reliable secondary education to children from ${city} and surrounding areas. We maintain a straightforward approach to schooling: steady daily attendance, careful attention to the state board syllabus, and a quiet insistence on honesty and mutual respect.`,
+      "Our teachers work closely with each class, identifying learning difficulties early in the term rather than waiting for board examinations. Whether in our science laboratories, library, or classrooms, our priority remains the steady intellectual and personal development of each student under our care."
+    ];
 ---
 
 <section class="principal-section" id="principal" aria-labelledby="principal-heading">
@@ -11,39 +33,33 @@ interface Props {
     <div class="principal-grid">
       <div class="principal-media">
         <Figure
-          src="/images/principal.jpg"
-          alt="Rev. Fr. Mathew Karottu, Principal of Mar Baselios Memorial Higher Secondary School"
+          src={principalPhoto}
+          alt={`${principalName}, Principal of ${schoolName}`}
           aspectRatio="4/3"
           class="principal-photo"
         />
         <div class="principal-caption">
-          <strong class="principal-name">Rev. Fr. Mathew Karottu</strong>
-          <span class="principal-degrees">M.Sc., M.Ed., M.Phil.</span>
-          <span class="principal-role">Principal & Head of Institution</span>
+          <strong class="principal-name">{principalName}</strong>
+          <span class="principal-degrees">{principalDegrees}</span>
+          <span class="principal-role">{principalRole}</span>
         </div>
       </div>
 
       <div class="principal-letter">
         <span class="section-tag">FROM THE PRINCIPAL'S DESK</span>
         <h2 id="principal-heading" class="principal-title">
-          Seventy years rooted in disciplined study and quiet service
+          {deskTitle}
         </h2>
 
         <div class="principal-prose">
-          <p>
-            Dear Parents, Guardians, and Students,
-          </p>
-          <p>
-            Founded in 1954, Mar Baselios Memorial Higher Secondary School was established to offer rigorous, reliable secondary education to children from Pala and surrounding panchayats. We maintain a straightforward approach to schooling: steady daily attendance, careful attention to the state board syllabus, and a quiet insistence on honesty and mutual respect.
-          </p>
-          <p>
-            Our teachers work closely with each class, identifying learning difficulties early in the term rather than waiting for board examinations. Whether in our science laboratories, library, or classrooms, our priority remains the steady intellectual and personal development of each student under our care.
-          </p>
+          {paragraphs.map((p) => (
+            <p>{p}</p>
+          ))}
         </div>
 
         <div class="letter-signoff">
-          <span class="signoff-signature">Fr. Mathew Karottu</span>
-          <span class="signoff-title">Principal, MBM HSS Pala</span>
+          <span class="signoff-signature">{principalShortName}</span>
+          <span class="signoff-title">Principal, {shortName}</span>
         </div>
       </div>
     </div>

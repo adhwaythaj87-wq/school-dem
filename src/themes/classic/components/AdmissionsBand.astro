@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { resolveI18n } from '../../../content.config';
-import siteConfig from '../../../site.config.json';
+import siteConfig from '../../../../school.config.json';
 import Icon from './Icon.astro';
 
 interface Props {
@@ -18,13 +18,13 @@ const data = admissionsCollection[0]?.data;
       <div class="band-header">
         <span class="band-tag">
           <span class="tag-dot" aria-hidden="true"></span>
-          ADMISSIONS SESSION 2026–27
+          ADMISSIONS SESSION {siteConfig.admissions?.academicYear || '2026–27'}
         </span>
         <h2 id="admissions-band-title" class="band-title">
-          Admissions for Classes 1, 5, 8 & Plus One (Science and Commerce)
+          {siteConfig.admissions?.classesOffered || 'Admissions for Classes 1, 5, 8 & Plus One (Science and Commerce)'}
         </h2>
         <p class="band-desc">
-          Application forms and prospectuses are issued from the school administrative counter Monday to Friday, 9:00 AM to 4:00 PM.
+          Application forms and prospectuses are issued from the school administrative counter {siteConfig.admissions?.counterTimings || siteConfig.contact.officeHours}.
         </p>
       </div>
 

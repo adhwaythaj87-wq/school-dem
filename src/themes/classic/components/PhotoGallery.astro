@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { resolveI18n } from '../../../content.config';
+import siteConfig from '../../../../school.config.json';
 import Figure from './Figure.astro';
 
 interface Props {
@@ -8,6 +9,8 @@ interface Props {
 }
 
 const galleryItems = await getCollection('gallery');
+const city = siteConfig.location.city || siteConfig.location.en;
+const gallerySubtitle = siteConfig.about?.gallerySubtitle || `Laboratories, lecture halls, campus grounds, and student activities in ${city}.`;
 ---
 
 <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
@@ -20,7 +23,7 @@ const galleryItems = await getCollection('gallery');
         Glimpses of Daily Life and Academic Work
       </h2>
       <p class="gallery-sub">
-        Laboratories, lecture halls, campus grounds, and student activities in Pala.
+        {gallerySubtitle}
       </p>
     </div>
 
