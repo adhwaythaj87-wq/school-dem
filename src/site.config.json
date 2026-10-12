@@ -1,88 +1,88 @@
 {
   "schoolName": {
-    "en": "Mar Baselios Memorial Higher Secondary School"
+    "en": "Sisuvihar English Medium School"
   },
   "shortName": {
-    "en": "Mar Baselios HSS"
+    "en": "Sisuvihar EMS"
   },
-  "abbreviation": "MBM",
+  "abbreviation": "SEMS",
   "motto": {
-    "en": "Faith, Truth, and Service"
+    "en": "Nurturing Young Minds with Care and Knowledge"
   },
-  "foundedYear": 1954,
-  "management": "Corporate Management of Orthodox Syrian Church",
+  "foundedYear": 1988,
+  "management": "Private Unaided Management",
 
   "location": {
-    "en": "Pala, Kottayam, Kerala",
-    "city": "Pala",
-    "subDistrict": "Meenachil Taluk",
-    "district": "Kottayam",
+    "en": "Kilimanoor, Thiruvananthapuram, Kerala",
+    "city": "Kilimanoor",
+    "subDistrict": "Kilimanoor Block",
+    "district": "Thiruvananthapuram",
     "state": "Kerala",
-    "pinCode": "686575",
-    "streetAddress": "College Road",
-    "address": "College Road, Pala, Kottayam District, Kerala - 686575, India"
+    "pinCode": "695601",
+    "streetAddress": "Main Road, Kilimanoor",
+    "address": "Kilimanoor, Thiruvananthapuram District, Kerala - 695601, India"
   },
 
   "affiliation": {
-    "board": "Kerala State Board of Education",
-    "schoolCode": "05042",
-    "higherSecondaryCode": "05018",
-    "subDistrict": "Meenachil Taluk",
-    "grades": "Classes 1 to 12 (LP, UP, HS & HSS)",
-    "medium": "English (Kerala State Syllabus)"
+    "board": "Kerala State / Recognized Primary & Pre-Primary",
+    "schoolCode": "32140500314",
+    "udiseCode": "32140500314",
+    "subDistrict": "Kilimanoor Block",
+    "grades": "Pre-Primary to Class 4 (Co-educational)",
+    "medium": "English"
   },
 
   "statistics": {
-    "studentCount": "1,450 Students",
-    "staffCount": "68 Staff Members",
-    "campusSize": "4.5-acre campus",
-    "serviceYears": "72 Years of Service"
+    "studentCount": "250+ Students",
+    "staffCount": "15 Faculty Members",
+    "campusSize": "10 Classrooms & Playground",
+    "serviceYears": "38 Years of Service"
   },
 
   "contact": {
-    "phone": "+91 4822 212450",
-    "altPhone": "+91 4822 212451",
-    "email": "info@example.com",
-    "officeHours": "Monday to Friday: 9:00 AM - 4:30 PM",
-    "address": "College Road, Pala, Kottayam District, Kerala - 686575, India",
-    "whatsappNumber": "919447123450",
-    "whatsappUrl": "https://wa.me/919447123450?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions."
+    "phone": "+91 470 2672314",
+    "altPhone": "+91 470 2670000",
+    "email": "sisuvihar.kilimanoor@gmail.com",
+    "officeHours": "Monday to Friday: 9:00 AM - 4:00 PM",
+    "address": "Kilimanoor, Thiruvananthapuram District, Kerala - 695601, India",
+    "whatsappNumber": "919447000000",
+    "whatsappUrl": "https://wa.me/919447000000?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Sisuvihar%20EMS."
   },
 
   "principal": {
-    "name": "Rev. Fr. Mathew Karottu",
-    "shortName": "Fr. Mathew Karottu",
-    "qualifications": "M.Sc., M.Ed., M.Phil.",
-    "designation": "Principal & Head of Institution",
+    "name": "Headmistress / Head Teacher",
+    "shortName": "Headmistress",
+    "qualifications": "B.Sc., B.Ed., TTC",
+    "designation": "Head of Institution",
     "photo": "/images/principal.jpg",
-    "deskTitle": "Seventy years rooted in disciplined study and quiet service",
+    "deskTitle": "Dedicated to foundational excellence and holistic child care",
     "messageParagraphs": [
-      "Dear Parents, Guardians, and Students,",
-      "Founded in 1954, Mar Baselios Memorial Higher Secondary School was established to offer rigorous, reliable secondary education to children from Pala and surrounding panchayats. We maintain a straightforward approach to schooling: steady daily attendance, careful attention to the state board syllabus, and a quiet insistence on honesty and mutual respect.",
-      "Our teachers work closely with each class, identifying learning difficulties early in the term rather than waiting for board examinations. Whether in our science laboratories, library, or classrooms, our priority remains the steady intellectual and personal development of each student under our care."
+      "Dear Parents, Guardians, and Well-wishers,",
+      "Established in 1988, Sisuvihar English Medium School has been a trusted educational institution for primary and foundational learning in Kilimanoor. We are committed to nurturing each child's innate curiosity in a secure, supportive, and stimulating environment.",
+      "With active pre-primary sections and classes from 1 to 4, our dedicated team of experienced teachers fosters English language fluency, foundational mathematics, computer-aided learning, and essential social values from an early age."
     ]
   },
 
   "about": {
     "sectionTag": "ABOUT OUR SCHOOL",
-    "tagline": "Providing dependable schooling in Meenachil Taluk since 1954",
-    "leadText": "Mar Baselios Memorial Higher Secondary School was established to provide sound, principled schooling to young men and women in Pala and neighboring agricultural panchayats. Operating under the corporate management of the Orthodox Syrian Church, the school welcomes students of all backgrounds and faiths.",
-    "secondaryText": "The 4.5-acre campus includes separate laboratories for physics, chemistry, biology, and computer applications, a well-stocked general library, and a full-size football ground. Extracurricular training includes active National Cadet Corps (Army Wing), Junior Red Cross, and National Service Scheme units.",
-    "footerSnippet": "Aided Higher Secondary School under the Corporate Management of Orthodox Syrian Church, recognized by the General Education Department, Kerala.",
-    "gallerySubtitle": "Laboratories, lecture halls, campus grounds, and student activities in Pala."
+    "tagline": "Fostering early childhood education and primary excellence in Kilimanoor since 1988",
+    "leadText": "Sisuvihar English Medium School was founded in 1988 to provide structured English-medium foundational schooling to children in Kilimanoor and neighboring areas of Thiruvananthapuram. As a private unaided co-educational school, we offer personalized attention across pre-primary and primary grades (Classes 1 to 4).",
+    "secondaryText": "The campus features 10 instructional classrooms, functional computer-aided learning facilities, a dedicated library with 400 books, a secure playground, and safe drinking water facilities. Academic sessions run from April, welcoming children into a joyful, disciplined learning environment.",
+    "footerSnippet": "Private Unaided Co-educational School (UDISE: 32140500314) in Kilimanoor Block, Thiruvananthapuram District, Kerala.",
+    "gallerySubtitle": "Classrooms, play areas, computer learning lab, and school activities in Kilimanoor."
   },
 
   "admissions": {
     "academicYear": "2026–27",
     "badge": "Academic Year 2026–27",
-    "headline": "Admissions Open for Classes 1, 5 and 11 (2026–27)",
-    "subhead": "Application forms available at the school office counter and online until 15 May 2026. Higher Secondary Science (PCMB/PCMC) and Commerce streams.",
-    "classesOffered": "Admissions for Classes 1, 5, 8 & Plus One (Science and Commerce)",
-    "counterTimings": "Monday to Friday, 9:00 AM to 4:00 PM"
+    "headline": "Admissions Open for Pre-Primary & Classes 1 to 4 (2026–27)",
+    "subhead": "Applications open for Play School, LKG, UKG, and Classes 1 through 4. Prospectus and admission forms are available at the school office.",
+    "classesOffered": "Pre-Primary (LKG, UKG) & Primary (Classes 1 to 4)",
+    "counterTimings": "Monday to Friday, 9:00 AM to 3:30 PM"
   },
 
-  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15732.123456789!2d76.6800!3d9.7100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cd123456789%3A0x123456789abcdef!2sPala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-  "mapExternalUrl": "https://maps.google.com/?q=Pala+Kottayam+Kerala",
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15767.35560649748!2d76.8654877!3d8.7753381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05e94b59ff5627%3A0xe549b0fb3ba1825b!2sKilimanoor%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  "mapExternalUrl": "https://maps.google.com/?q=Kilimanoor+Thiruvananthapuram+Kerala",
   "theme": "classic",
   "defaultLanguage": "en",
   "languages": ["en"],
@@ -99,7 +99,7 @@
     },
     {
       "id": "fees",
-      "label": { "en": "Fee Payment" },
+      "label": { "en": "Fee Details" },
       "url": "#admissions",
       "icon": "credit-card"
     },
@@ -111,19 +111,19 @@
     },
     {
       "id": "timetable",
-      "label": { "en": "Exam Timetable" },
+      "label": { "en": "Class Timetable" },
       "url": "#academics",
       "icon": "calendar"
     },
     {
-      "id": "results",
-      "label": { "en": "Board Results" },
-      "url": "#toppers",
+      "id": "facilities",
+      "label": { "en": "Facilities" },
+      "url": "#about",
       "icon": "award"
     },
     {
-      "id": "bus-routes",
-      "label": { "en": "School Bus Routes" },
+      "id": "transport",
+      "label": { "en": "Transport" },
       "url": "#about",
       "icon": "bus"
     },
@@ -140,7 +140,7 @@
     { "label": { "en": "Academics" }, "path": "#academics" },
     { "label": { "en": "Admissions" }, "path": "#admissions" },
     { "label": { "en": "News & Events" }, "path": "#news-events" },
-    { "label": { "en": "Merit List" }, "path": "#toppers" },
+    { "label": { "en": "Gallery" }, "path": "#gallery" },
     { "label": { "en": "Contact" }, "path": "#contact" }
   ]
 }
