@@ -20,10 +20,9 @@ const allToppers = await getCollection('toppers');
           Recent Board Examination Achievers (Merit Roll)
         </h2>
       </div>
-      <span class="demo-table-tag">[Sample Student Data - Replace Before Launch]</span>
     </div>
 
-    <!-- Simple, high-contrast, accessible table -->
+    <!-- Desktop Table View (> 640px) -->
     <div class="table-responsive-container">
       <table class="toppers-table" aria-label="School Toppers Merit Board">
         <thead>
@@ -52,6 +51,27 @@ const allToppers = await getCollection('toppers');
           })}
         </tbody>
       </table>
+    </div>
+
+    <!-- Mobile Card View (<= 640px) -->
+    <div class="mobile-toppers-list" role="list">
+      {allToppers.map((topper) => {
+        const ach = resolveI18n(topper.data.achievement);
+        return (
+          <div class="mobile-topper-card" role="listitem">
+            <div class="mobile-card-top">
+              <span class="mobile-card-year">{topper.data.year} Merit</span>
+              <span class="score-badge">{topper.data.score}</span>
+            </div>
+            <h3 class="mobile-card-name">{topper.data.name}</h3>
+            <p class="mobile-card-stream">{topper.data.stream}</p>
+            <div class="mobile-card-distinction">
+              <span class="distinction-label">Distinction:</span>
+              <span class="distinction-text">{ach.text}</span>
+            </div>
+          </div>
+        );
+      })}
     </div>
 
     <div class="toppers-footer-note">
@@ -88,12 +108,6 @@ const allToppers = await getCollection('toppers');
   .toppers-title {
     font-size: clamp(1.35rem, 2.5vw, 1.85rem);
     color: var(--color-primary-dark);
-  }
-
-  .demo-table-tag {
-    font-size: 12.5px;
-    color: var(--color-text-muted);
-    font-style: italic;
   }
 
   .table-responsive-container {
@@ -165,8 +179,12 @@ const allToppers = await getCollection('toppers');
     color: var(--color-text-secondary);
   }
 
+  .mobile-toppers-list {
+    display: none;
+  }
+
   .toppers-footer-note {
-    margin-top: var(--space-3);
+    margin-top: var(--space-4);
     font-size: 13px;
     color: var(--color-text-muted);
   }
@@ -176,6 +194,81 @@ const allToppers = await getCollection('toppers');
       flex-direction: column;
       align-items: flex-start;
       gap: var(--space-2);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .table-responsive-container {
+      display: none;
+    }
+
+    .mobile-toppers-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .mobile-topper-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-accent);
+      border-radius: var(--radius-sm);
+      padding: var(--space-3) var(--space-4);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .mobile-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      gap: 8px;
+    }
+
+    .mobile-card-year {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.04em;
+    }
+
+    .mobile-card-name {
+      font-family: var(--font-heading);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .mobile-card-stream {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .mobile-card-distinction {
+      font-size: 12.5px;
+      color: var(--color-text);
+      background-color: var(--color-surface-subtle);
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+      border-left: 2px solid var(--color-primary-light);
+    }
+
+    .distinction-label {
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .distinction-text {
+      font-weight: 500;
     }
   }
 </style>

@@ -23,7 +23,10 @@ interface Props {
 
     <div class="utility-actions">
       <a href="#admissions" class="admissions-link">
-        <span class="admissions-badge">Admissions 2026–27 Open</span>
+        <span class="admissions-badge">
+          <span class="badge-text-full">Admissions 2026–27 Open</span>
+          <span class="badge-text-compact">Admissions Open</span>
+        </span>
       </a>
     </div>
   </div>
@@ -92,6 +95,10 @@ interface Props {
     display: inline-block;
   }
 
+  .badge-text-compact {
+    display: none;
+  }
+
   .admissions-link:hover .admissions-badge {
     background-color: var(--color-accent-hover);
   }
@@ -127,6 +134,16 @@ interface Props {
     .admissions-badge {
       font-size: 12px;
       padding: 2px 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .badge-text-full {
+      display: none;
+    }
+
+    .badge-text-compact {
+      display: inline;
     }
   }
 </style>

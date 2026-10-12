@@ -54,7 +54,6 @@ const academicStreams = await getCollection('academics');
                     return (
                       <li>
                         <span>{subText.text}</span>
-                        {subText.isFallback && <span class="lang-fallback-tag">English only</span>}
                       </li>
                     );
                   })}

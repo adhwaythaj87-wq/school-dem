@@ -32,9 +32,9 @@
   "theme": "classic",
   "defaultLanguage": "en",
   "languages": ["en"],
-  "isDemo": true,
+  "isDemo": false,
   "demoDisclaimer": {
-    "en": "Demo website for school preview. All statistical figures and contact numbers are illustrative placeholders."
+    "en": "Official institutional portal of Mar Baselios Memorial Higher Secondary School, Pala."
   },
   "socialLinks": [
     { "name": "Facebook", "url": "https://facebook.com", "icon": "facebook" },

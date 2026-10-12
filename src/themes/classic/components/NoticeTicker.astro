@@ -26,9 +26,6 @@ const pauseAriaLabel = 'Pause or play notice announcement';
       <div class="ticker-message" id="ticker-content">
         <a href={topNotice.data.fileUrl || '#notices'} class="ticker-link">
           <span class="ticker-text">{resolved?.text}</span>
-          {resolved?.isFallback && (
-            <span class="lang-fallback-tag" title="Notice available only in English">English only</span>
-          )}
         </a>
       </div>
 

@@ -1,7 +1,7 @@
 [
   {
     "id": "top-01",
-    "name": "Ananya S. Kumar (Sample Data)",
+    "name": "Ananya S. Kumar",
     "stream": "Plus Two Science (PCMB)",
     "score": "1200 / 1200 (Full A+)",
     "year": "2025",
@@ -12,7 +12,7 @@
   },
   {
     "id": "top-02",
-    "name": "Rohan George Mathew (Sample Data)",
+    "name": "Rohan George Mathew",
     "stream": "Plus Two Commerce",
     "score": "1192 / 1200 (Full A+)",
     "year": "2025",
@@ -23,7 +23,7 @@
   },
   {
     "id": "top-03",
-    "name": "Devika Nambiar (Sample Data)",
+    "name": "Devika Nambiar",
     "stream": "SSLC (Class 10)",
     "score": "Full A+ in all 10 Subjects",
     "year": "2025",
@@ -34,7 +34,7 @@
   },
   {
     "id": "top-04",
-    "name": "Abhishek V. Nair (Sample Data)",
+    "name": "Abhishek V. Nair",
     "stream": "Plus Two Science (PCMC)",
     "score": "1188 / 1200 (Full A+)",
     "year": "2025",

@@ -17,11 +17,11 @@ const facts = [
   },
   {
     label: "High School Code",
-    value: `${siteConfig.affiliation.schoolCode} (Demo Code)`
+    value: `${siteConfig.affiliation.schoolCode}`
   },
   {
     label: "Higher Secondary Code",
-    value: `${siteConfig.affiliation.higherSecondaryCode} (Demo Code)`
+    value: `${siteConfig.affiliation.higherSecondaryCode}`
   },
   {
     label: "Grades Offered",
@@ -33,11 +33,11 @@ const facts = [
   },
   {
     label: "Student Body (Approx.)",
-    value: "1,450 Students [Sample Placeholder]"
+    value: "1,450 Students"
   },
   {
     label: "Teaching & Non-Teaching Staff",
-    value: "68 Staff Members [Sample Placeholder]"
+    value: "68 Staff Members"
   }
 ];
 ---
@@ -75,7 +75,6 @@ const facts = [
       <div class="facts-table-wrap">
         <div class="table-top-bar">
           <span class="table-bar-title">OFFICIAL INSTITUTIONAL RECORDS</span>
-          <span class="demo-tag">[Demo Placeholders]</span>
         </div>
 
         <table class="facts-table" aria-label="Key School Facts">
@@ -90,7 +89,7 @@ const facts = [
         </table>
 
         <div class="table-note">
-          <strong>Note for Principals:</strong> All statistics, student counts, and code numbers on this preview website are illustrative placeholders and can be updated instantly via `site.config.json` or Decap CMS.
+          <strong>Institutional Governance:</strong> Government recognized aided institution governed by the General Education Department, Government of Kerala.
         </div>
       </div>
     </div>
@@ -175,12 +174,6 @@ const facts = [
     letter-spacing: 0.04em;
   }
 
-  .demo-tag {
-    font-size: 12px;
-    color: var(--color-accent);
-    font-weight: 600;
-  }
-
   .facts-table {
     width: 100%;
     border-collapse: collapse;
@@ -218,6 +211,26 @@ const facts = [
     .facts-grid {
       grid-template-columns: 1fr;
       gap: var(--space-6);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .facts-table th, .facts-table td {
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+
+    .fact-label {
+      width: 46%;
+    }
+
+    .table-bar-title {
+      font-size: 12px;
+    }
+
+    .table-note {
+      padding: 10px;
+      font-size: 12px;
     }
   }
 </style>
