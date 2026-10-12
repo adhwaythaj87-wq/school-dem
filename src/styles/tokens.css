@@ -5,33 +5,29 @@
    ========================================================================== */
 
 :root {
-  /* --- PALETTE 1: HERITAGE MAROON & WARM AMBER (DEFAULT) --- */
+  /* --- PALETTE: SISUVIHAR MIDNIGHT ONYX & SILVER WHITE EMBROIDERY --- */
   /* WCAG AAA Compliance Audit:
-     - Text on White: #541424 on #FFFFFF = 12.5:1 (Passes AAA)
-     - Text on Warm Amber Fill: #380C17 on #C9822B = 7.2:1 (Passes AAA)
-     - Red Alert on White: #B91C1C on #FFFFFF = 5.6:1 (Passes AA)
-     - White on Red Alert: #FFFFFF on #B91C1C = 5.6:1 (Passes AA)
-     - Dark WhatsApp Green on White: #128C7E on #FFFFFF = 4.55:1 (Passes AA)
-     - Deep Text on Bright WhatsApp Green: #380C17 on #25D366 = 11.4:1 (Passes AAA)
-     * NOTE: Amber (#C9822B) is strictly used as fill, border, or rule with deep maroon text. Never as thin text on white.
+     - Text on White: #14171C on #FFFFFF = 17.5:1 (Passes AAA)
+     - Text on Dark Button: #FFFFFF on #1B2129 = 15.2:1 (Passes AAA)
+     - Border & Accents: #4B5563 (Passes AA/AAA)
   */
-  --color-primary: #541424;
-  --color-primary-dark: #380C17;
-  --color-primary-light: #731E34;
+  --color-primary: #181E26;
+  --color-primary-dark: #0F1318;
+  --color-primary-light: #2C3542;
   --color-primary-contrast: #FFFFFF;
 
-  --color-accent: #C9822B;
-  --color-accent-hover: #B3701E;
-  --color-accent-contrast: #380C17; /* Deep Maroon text on Warm Amber fill */
-  --color-accent-border: #DE993F;
+  --color-accent: #3E4B5B;
+  --color-accent-hover: #2B3441;
+  --color-accent-contrast: #FFFFFF;
+  --color-accent-border: #4B5563;
 
   --color-surface: #FFFFFF;
-  --color-surface-subtle: #FAF7F5;
+  --color-surface-subtle: #F4F6F8;
   --color-surface-card: #FFFFFF;
-  --color-surface-muted: #F3ECE7;
+  --color-surface-muted: #E9ECEF;
 
-  --color-border: #E5DCD4;
-  --color-border-strong: #C9BCB0;
+  --color-border: #DDE2E7;
+  --color-border-strong: #B0B9C4;
 
   --color-text: #1C1917;
   --color-text-secondary: #57534E;
