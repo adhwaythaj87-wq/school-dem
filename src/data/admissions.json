@@ -1,0 +1,90 @@
+[
+  {
+    "id": "admissions-2026-27",
+    "title": {
+      "en": "Admissions Procedure & Guidelines for Academic Year 2026–27",
+      "ml": "2026–27 അധ്യയന വർഷത്തെ പ്രവേശന നടപടിക്രമങ്ങളും നിർദ്ദേശങ്ങളും"
+    },
+    "academicYear": "2026–27",
+    "dates": [
+      {
+        "event": {
+          "en": "Issue of Application Forms (Online & School Office)",
+          "ml": "അപേക്ഷാ ഫോമുകൾ വിതരണം ചെയ്യുന്നു"
+        },
+        "date": "15 May 2026"
+      },
+      {
+        "event": {
+          "en": "Last Date for Submission of Filled Applications",
+          "ml": "അപേക്ഷ സമർപ്പിക്കേണ്ട അവസാന തീയതി"
+        },
+        "date": "30 May 2026 (5:00 PM)"
+      },
+      {
+        "event": {
+          "en": "Publication of First Allotment & Merit Index List",
+          "ml": "ഒന്നാം അലോട്ട്മെന്റ് മെറിറ്റ് ലിസ്റ്റ് പ്രസിദ്ധീകരണം"
+        },
+        "date": "04 June 2026"
+      },
+      {
+        "event": {
+          "en": "Document Verification and Admission Confirmation",
+          "ml": "സർട്ടിഫിക്കറ്റ് പരിശോധനയും പ്രവേശനവും"
+        },
+        "date": "08 June 2026 to 12 June 2026"
+      }
+    ],
+    "feeStructure": [
+      {
+        "grade": "Classes 1 to 4 (LP Section)",
+        "tuitionFeePerTerm": "₹0 (Govt. Aided)",
+        "specialFeeAnnual": "₹450",
+        "cautionDeposit": "₹0"
+      },
+      {
+        "grade": "Classes 5 to 7 (UP Section)",
+        "tuitionFeePerTerm": "₹0 (Govt. Aided)",
+        "specialFeeAnnual": "₹600",
+        "cautionDeposit": "₹0"
+      },
+      {
+        "grade": "Classes 8 to 10 (High School)",
+        "tuitionFeePerTerm": "₹0 (Govt. Aided)",
+        "specialFeeAnnual": "₹850",
+        "cautionDeposit": "₹200"
+      },
+      {
+        "grade": "Classes 11 & 12 (Higher Secondary Science)",
+        "tuitionFeePerTerm": "₹400",
+        "specialFeeAnnual": "₹1,400 (Lab & Library)",
+        "cautionDeposit": "₹500"
+      },
+      {
+        "grade": "Classes 11 & 12 (Higher Secondary Commerce)",
+        "tuitionFeePerTerm": "₹400",
+        "specialFeeAnnual": "₹1,100 (Computer & Library)",
+        "cautionDeposit": "₹500"
+      }
+    ],
+    "guidelines": [
+      {
+        "en": "Transfer Certificate (TC) from the previous recognized institution with conduct certificate.",
+        "ml": "മുൻ സ്കൂളിൽ നിന്നുമുള്ള ട്രാൻസ്ഫർ സർട്ടിഫിക്കറ്റും (ടി.സി) സ്വഭാവ സർട്ടിഫിക്കറ്റും."
+      },
+      {
+        "en": "Original and attested copies of Birth Certificate and Aadhaar card of the student.",
+        "ml": "ജനന സർട്ടിഫിക്കറ്റിന്റെയും ആധാർ കാർഡിന്റെയും അസലും സാക്ഷ്യപ്പെടുത്തിയ പകർപ്പുകളും."
+      },
+      {
+        "en": "Self-attested copy of SSLC / Class 10 marksheet for Plus One admission candidates.",
+        "ml": "പ്ലസ് വൺ പ്രവേശനത്തിന് എസ്.എസ്.എൽ.സി / പത്താം ക്ലാസ് മാർക്ക് ലിസ്റ്റിന്റെ പകർപ്പ്."
+      },
+      {
+        "en": "Two recent passport-sized color photographs in formal school uniform attire.",
+        "ml": "വിദ്യാർത്ഥിയുടെ രണ്ട് പാസ്പോർട്ട് സൈസ് ഫോട്ടോകൾ."
+      }
+    ]
+  }
+]

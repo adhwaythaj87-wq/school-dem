@@ -1,0 +1,429 @@
+---
+import { getCollection } from 'astro:content';
+import { resolveI18n } from '../../../content.config';
+import Figure from './Figure.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  currentLang?: string;
+}
+
+// Fetch hero carousel slides from content collection
+const heroSlidesCollection = await getCollection('heroSlides');
+const slides = heroSlidesCollection.map(s => s.data);
+
+const copy = {
+  badge: "Academic Year 2026–27",
+  headline: "Admissions Open for Classes 1, 5 and 11 (2026–27)",
+  subhead: "Application forms available at the school office counter and online until 15 May 2026. Higher Secondary Science (PCMB/PCMC) and Commerce streams.",
+  primaryCta: "Download Prospectus & Form",
+  secondaryCta: "View Eligibility & Fees"
+};
+---
+
+<section class="hero-section" aria-labelledby="hero-heading">
+  <div class="container hero-container">
+    <div class="hero-stage">
+      <!-- 1. Hero Campus Slideshow (Automatic Seamless Loop) -->
+      <div
+        class="hero-carousel-container"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="School Campus Tour"
+      >
+        <!-- Scroll-snap Track -->
+        <div class="hero-carousel-track" id="hero-carousel-track" tabindex="0" aria-live="off">
+          {slides.map((slide, index) => {
+            const alt = resolveI18n(slide.alt);
+            const caption = resolveI18n(slide.caption);
+            return (
+              <div
+                class="hero-carousel-slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`Slide ${index + 1} of ${slides.length}: ${caption.text}`}
+              >
+                <!-- Desktop 16:7, Mobile 16:10 aspect ratio via responsive CSS -->
+                <div class="slide-media-wrap">
+                  <Figure
+                    src={slide.image}
+                    alt={alt.text}
+                    aspectRatio="16/7"
+                    priority={index === 0}
+                    class="hero-carousel-figure"
+                  />
+                </div>
+
+                <!-- Solid Navy Caption Bar (Never gradient or glass) -->
+                <div class="slide-caption-bar" aria-hidden="true">
+                  <span class="slide-caption-badge">MBM CAMPUS</span>
+                  <span class="slide-caption-title">{caption.text}</span>
+                  <span class="slide-caption-counter">({index + 1} / {slides.length})</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- 2. Fixed Admissions Content Card (Never rotates away) -->
+      <div class="hero-fixed-card">
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>{copy.badge}</span>
+        </div>
+
+        <h1 id="hero-heading" class="hero-title">
+          {copy.headline}
+        </h1>
+
+        <p class="hero-subhead">
+          {copy.subhead}
+        </p>
+
+        <div class="hero-actions">
+          <a href="#admissions" class="btn btn-primary hero-btn">
+            <Icon name="download" size={18} />
+            <span>{copy.primaryCta}</span>
+          </a>
+          <a href="#admissions" class="btn btn-outline hero-btn-secondary">
+            <span>{copy.secondaryCta}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Automatic Smooth Looping Controller -->
+<script is:inline>
+(() => {
+  const track = document.getElementById('hero-carousel-track');
+  if (!track) return;
+  const slides = track.querySelectorAll('.hero-carousel-slide');
+  if (slides.length <= 1) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let currentIndex = 0;
+  let timer = null;
+
+  function scrollToSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+    const w = track.clientWidth || slides[0].offsetWidth;
+    track.scrollTo({ left: currentIndex * w, behavior: 'smooth' });
+  }
+
+  function startLoop() {
+    stopLoop();
+    if (!prefersReduced) {
+      timer = setInterval(() => {
+        scrollToSlide(currentIndex + 1);
+      }, 5000);
+    }
+  }
+
+  function stopLoop() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  // Pause on hover so visitors can examine a photo/caption
+  track.addEventListener('mouseenter', stopLoop);
+  track.addEventListener('mouseleave', startLoop);
+  track.addEventListener('touchstart', stopLoop, { passive: true });
+  track.addEventListener('touchend', startLoop, { passive: true });
+
+  // Sync index on manual swipe/scroll
+  let scrollTimeout;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const w = track.clientWidth || slides[0].offsetWidth;
+      if (w > 0) {
+        currentIndex = Math.round(track.scrollLeft / w);
+      }
+    }, 120);
+  }, { passive: true });
+
+  // Pause when browser tab is hidden to conserve resources
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      stopLoop();
+    } else {
+      startLoop();
+    }
+  });
+
+  startLoop();
+})();
+</script>
+
+<style>
+  .hero-section {
+    background-color: var(--color-surface-subtle);
+    border-bottom: 1px solid var(--color-border);
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-8);
+  }
+
+  .hero-stage {
+    position: relative;
+    width: 100%;
+  }
+
+  /* Carousel Outer Container */
+  .hero-carousel-container {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: var(--color-primary-dark);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Scroll-snap Track */
+  .hero-carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    outline: none;
+  }
+
+  .hero-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slide-media-wrap {
+    width: 100%;
+    position: relative;
+  }
+
+  .slide-media-wrap :global(.figure-wrapper) {
+    aspect-ratio: 16/7;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  /* Solid Caption Bar: Never Gradient, Never Glass */
+  .slide-caption-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    background-color: var(--color-primary-dark);
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-top: 2px solid var(--color-accent);
+    font-size: 13px;
+    z-index: 5;
+  }
+
+  .slide-caption-badge {
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  .slide-caption-title {
+    font-weight: 600;
+    color: #F1F5F9;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .slide-caption-counter {
+    color: #94A3B8;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Fixed Admissions Card (Desktop: Lower Left Overlapping) */
+  .hero-fixed-card {
+    position: absolute;
+    bottom: var(--space-10);
+    left: var(--space-6);
+    max-width: 480px;
+    background-color: #FAFCFE;
+    border: 1px solid var(--color-border);
+    border-top: 4px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: var(--space-6);
+    box-shadow: 0 10px 32px rgba(8, 26, 45, 0.2);
+    z-index: 20;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #E6EFF8;
+    color: var(--color-primary-dark);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+    border: 1px solid #C4D9ED;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+  }
+
+  .hero-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.95rem);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-2);
+    font-family: var(--font-heading);
+    line-height: 1.25;
+  }
+
+
+  .hero-subhead {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #334155;
+    margin-bottom: var(--space-4);
+  }
+
+  :lang(ml) .hero-subhead, [lang="ml"] .hero-subhead {
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .hero-btn {
+    min-height: 46px;
+    padding-inline: var(--space-5);
+  }
+
+  .hero-btn-secondary {
+    min-height: 46px;
+    padding-inline: var(--space-4);
+    background-color: #FFFFFF;
+    color: var(--color-primary);
+    border: 1px solid var(--color-border-strong);
+  }
+
+  .hero-btn-secondary:hover {
+    background-color: var(--color-surface-subtle);
+  }
+
+  /* Mobile Layout (<960px): Stacked directly under carousel */
+  @media (max-width: 960px) {
+    .hero-section {
+      padding-top: var(--space-2);
+      padding-bottom: var(--space-3);
+    }
+
+    .slide-media-wrap :global(.figure-wrapper) {
+      aspect-ratio: 16/10 !important;
+      max-height: 150px;
+    }
+
+    .slide-caption-bar {
+      padding: 4px 10px;
+      font-size: 11.5px;
+    }
+
+    .slide-caption-badge {
+      display: none;
+    }
+
+    .hero-fixed-card {
+      position: static;
+      max-width: 100%;
+      margin-top: 6px;
+      padding: 10px 12px;
+      box-shadow: 0 4px 12px rgba(8, 26, 45, 0.05);
+    }
+
+    .hero-badge {
+      display: none;
+    }
+
+    .hero-title {
+      font-size: 1.0625rem;
+      line-height: 1.22;
+      margin-bottom: 3px;
+    }
+
+    :lang(ml) .hero-title, [lang="ml"] .hero-title {
+      font-size: 1.05rem;
+    }
+
+    .hero-subhead {
+      font-size: 12.5px;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+    }
+
+    .hero-btn {
+      width: 100%;
+      min-height: 44px;
+      justify-content: center;
+      padding: 8px 12px;
+      font-size: 13.5px;
+    }
+
+    .hero-btn-secondary {
+      display: none;
+    }
+  }
+
+  /* 360px Ultra-Compact Tuning */
+  @media (max-width: 380px) {
+    .slide-media-wrap :global(.figure-wrapper) {
+      max-height: 135px;
+    }
+
+    .slide-caption-bar {
+      padding: 3px 8px;
+      font-size: 11px;
+    }
+
+    .hero-title {
+      font-size: 1.02rem;
+    }
+
+    .hero-subhead {
+      font-size: 12px;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+  }
+</style>

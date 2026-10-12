@@ -1,0 +1,44 @@
+[
+  {
+    "id": "news-01",
+    "title": {
+      "en": "School Science Club secures First Prize at Kottayam District Revenue School Science Fair",
+      "ml": "കോട്ടയം റവന്യൂ ജില്ലാ സ്കൂൾ ശാസ്ത്രമേളയിൽ സ്കൂൾ സയൻസ് ക്ലബ്ബിന് ഒന്നാം സ്ഥാനം"
+    },
+    "date": "2026-03-24",
+    "excerpt": {
+      "en": "High school team presented an automated gravity-assisted rainwater filtration project designed for local residential hillside terrains.",
+      "ml": "നാട്ടിൻപുറങ്ങളിലെ മഴവെള്ള ശുദ്ധീകരണത്തിനായി വിദ്യാർത്ഥികൾ വികസിപ്പിച്ച പ്രൊജക്റ്റ് വിധികർത്താക്കളുടെ പ്രശംസ നേടി."
+    },
+    "image": "/images/science-lab.jpg",
+    "featured": true
+  },
+  {
+    "id": "news-02",
+    "title": {
+      "en": "Modernized High School Digital Library and Reference Section opened for students",
+      "ml": "ആധുനിക ഡിജിറ്റൽ ലൈബ്രറിയും റഫറൻസ് വിഭാഗവും വിദ്യാർത്ഥികൾക്കായി തുറന്നു നൽകി"
+    },
+    "date": "2026-02-18",
+    "excerpt": {
+      "en": "The upgraded facility adds 1,200 standard curriculum reference texts and terminal access to digital state educational portals.",
+      "ml": "1,200 പുതിയ റഫറൻസ് പുസ്തകങ്ങളും ഡിജിറ്റൽ വിദ്യാഭ്യാസ പോർട്ടലുകൾക്കുള്ള സൗകര്യവും ലൈബ്രറിയിൽ ലഭ്യമാക്കിയിട്ടുണ്ട്."
+    },
+    "image": "/images/library.jpg",
+    "featured": false
+  },
+  {
+    "id": "news-03",
+    "title": {
+      "en": "Annual Inter-House Athletic Meet concluded with St. Thomas House lifting the overall championship trophy",
+      "ml": "വാർഷിക കായിക മേള സമാപിച്ചു; സെന്റ് തോമസ് ഹൗസ് ഓവറോൾ ചാമ്പ്യൻഷിപ്പ് നേടി"
+    },
+    "date": "2026-01-30",
+    "excerpt": {
+      "en": "Over 450 students from classes 5 to 12 participated in track and field disciplines on the school grounds.",
+      "ml": "450 ലധികം വിദ്യാർത്ഥികൾ പങ്കെടുത്ത കായിക മേളയിൽ മികച്ച പ്രകടനങ്ങൾ കാഴ്ചവെച്ചു."
+    },
+    "image": "/images/sports.jpg",
+    "featured": false
+  }
+]

@@ -1,0 +1,244 @@
+---
+import { getCollection } from 'astro:content';
+import { resolveI18n } from '../../../content.config';
+import siteConfig from '../../../site.config.json';
+import Icon from './Icon.astro';
+
+interface Props {
+  currentLang?: string;
+}
+
+const admissionsCollection = await getCollection('admissions');
+const data = admissionsCollection[0]?.data;
+---
+
+<section class="admissions-band-section" id="admissions" aria-labelledby="admissions-band-title">
+  <div class="container">
+    <div class="admissions-band-card">
+      <div class="band-header">
+        <span class="band-tag">
+          <span class="tag-dot" aria-hidden="true"></span>
+          ADMISSIONS SESSION 2026–27
+        </span>
+        <h2 id="admissions-band-title" class="band-title">
+          Admissions for Classes 1, 5, 8 & Plus One (Science and Commerce)
+        </h2>
+        <p class="band-desc">
+          Application forms and prospectuses are issued from the school administrative counter Monday to Friday, 9:00 AM to 4:00 PM.
+        </p>
+      </div>
+
+      <!-- Key Dates Grid -->
+      <div class="band-dates-grid">
+        {data?.dates.map((d) => {
+          const evt = resolveI18n(d.event);
+          return (
+            <div class="band-date-card">
+              <span class="date-calendar-badge">{d.date}</span>
+              <span class="date-event-name">
+                {evt.text}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Action Buttons Row -->
+      <div class="band-actions-row">
+        <!-- Primary Solid Maroon CTA -->
+        <a href="#admissions" class="btn band-primary-cta">
+          <Icon name="download" size={18} />
+          <span>Download Prospectus & Form (PDF)</span>
+        </a>
+
+        <!-- WhatsApp Direct Chat Button -->
+        <a
+          href={siteConfig.contact.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn band-whatsapp-cta"
+          aria-label="Chat with school office on WhatsApp"
+        >
+          <Icon name="whatsapp" size={18} />
+          <span>Chat with Office on WhatsApp</span>
+        </a>
+
+        <!-- Phone contact button -->
+        <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} class="btn band-phone-cta">
+          <Icon name="phone" size={16} />
+          <span>{siteConfig.contact.phone}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .admissions-band-section {
+    background-color: var(--color-surface-alt);
+    padding-block: var(--space-12);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .admissions-band-card {
+    background-color: #FFFFFF;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-top: 4px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: var(--space-8) var(--space-8);
+    box-shadow: 0 4px 20px rgba(8, 26, 45, 0.05);
+  }
+
+  .band-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .band-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
+    background-color: #EEF4F9;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: var(--space-3);
+  }
+
+  .tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+  }
+
+  .band-title {
+    color: var(--color-primary);
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    margin-bottom: var(--space-2);
+    font-family: var(--font-heading);
+    line-height: 1.25;
+  }
+
+  .band-desc {
+    color: var(--color-text-muted);
+    font-size: 15.5px;
+    line-height: 1.6;
+    max-width: 720px;
+  }
+
+  .band-dates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .band-date-card {
+    background-color: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    padding: var(--space-4) var(--space-4);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .band-date-card:hover {
+    background-color: #FFFFFF;
+    border-color: var(--color-primary);
+  }
+
+  .date-calendar-badge {
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .date-event-name {
+    font-size: 13.5px;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+
+  .band-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .band-primary-cta {
+    min-height: 46px;
+    padding-inline: var(--space-6);
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-primary);
+    transition: background-color 0.15s ease;
+  }
+
+  .band-primary-cta:hover {
+    background-color: var(--color-primary-light);
+    color: #FFFFFF;
+  }
+
+  .band-whatsapp-cta {
+    min-height: 46px;
+    padding-inline: var(--space-5);
+    background-color: #128C7E;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: 1px solid #128C7E;
+    transition: background-color 0.15s ease;
+  }
+
+  .band-whatsapp-cta:hover {
+    background-color: #0E7064;
+    color: #FFFFFF;
+  }
+
+  .band-phone-cta {
+    min-height: 46px;
+    padding-inline: var(--space-5);
+    color: var(--color-primary);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .band-phone-cta:hover {
+    background-color: #F8FAFC;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .admissions-band-card {
+      padding: var(--space-5) var(--space-4);
+    }
+
+    .band-actions-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .band-primary-cta, .band-whatsapp-cta, .band-phone-cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

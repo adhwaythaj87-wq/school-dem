@@ -1,0 +1,67 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  aspectRatio?: '16/9' | '4/3' | '3/2' | '16/10' | '16/7' | '1/1' | string;
+  caption?: string;
+  priority?: boolean;
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  aspectRatio = '16/9',
+  caption,
+  priority = false,
+  class: className = ''
+} = Astro.props;
+---
+
+<figure class={`school-figure ${className}`}>
+  <div class="figure-wrapper" style={`aspect-ratio: ${aspectRatio};`}>
+    <img
+      src={src}
+      alt={alt}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : 'auto'}
+      decoding="async"
+      class="figure-img"
+    />
+  </div>
+  {caption && (
+    <figcaption class="figure-caption">
+      {caption}
+    </figcaption>
+  )}
+</figure>
+
+<style>
+  .school-figure {
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .figure-wrapper {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-surface-subtle);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .figure-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .figure-caption {
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-normal);
+  }
+</style>

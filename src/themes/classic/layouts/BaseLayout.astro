@@ -1,0 +1,99 @@
+---
+import siteConfig from '../../../site.config.json';
+import '../../../styles/tokens.css';
+import '../../../styles/base.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = `${siteConfig.schoolName.en} | Pala, Kottayam`,
+  description = 'Mar Baselios Memorial Higher Secondary School, Pala, Kottayam, Kerala. Kerala State Board affiliated, Classes 1 to 12. Admissions, fees, circulars, and academic streams.',
+  image = '/images/hero.jpg'
+} = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.toString() : 'https://example.com';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+// EducationalOrganization Structured Data (JSON-LD)
+const schoolJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": siteConfig.schoolName.en,
+  "url": siteUrl,
+  "logo": `${siteUrl}/images/crest.svg`,
+  "image": `${siteUrl}/images/hero.jpg`,
+  "description": description,
+  "foundingDate": String(siteConfig.foundedYear),
+  "telephone": siteConfig.contact.phone,
+  "email": siteConfig.contact.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "College Road",
+    "addressLocality": "Pala",
+    "addressRegion": "Kerala",
+    "postalCode": "686575",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "9.7100",
+    "longitude": "76.6800"
+  }
+};
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/images/crest.svg" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${image}`} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${siteUrl}${image}`} />
+
+    <!-- Web Fonts with font-display: swap -->
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Source Serif 4 (Headings) & Source Sans 3 (Body) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD EducationalOrganization -->
+    <script type="application/ld+json" set:html={JSON.stringify(schoolJsonLd)} />
+  </head>
+  <body class="site-body">
+    <a href="#main-content" class="skip-link">
+      Skip to main content
+    </a>
+
+    <slot name="header" />
+
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+
+    <slot name="footer" />
+  </body>
+</html>

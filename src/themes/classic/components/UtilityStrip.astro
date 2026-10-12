@@ -1,0 +1,132 @@
+---
+import siteConfig from '../../../site.config.json';
+import Icon from './Icon.astro';
+
+interface Props {
+  currentLang?: 'en';
+}
+---
+
+<div class="utility-strip" aria-label="Quick contact and admissions link">
+  <div class="container utility-content">
+    <div class="contact-items">
+      <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} class="utility-link" aria-label={`Call office: ${siteConfig.contact.phone}`}>
+        <Icon name="phone" size={14} />
+        <span>{siteConfig.contact.phone}</span>
+      </a>
+
+      <a href={`mailto:${siteConfig.contact.email}`} class="utility-link email-item" aria-label={`Email office: ${siteConfig.contact.email}`}>
+        <Icon name="mail" size={14} />
+        <span>{siteConfig.contact.email}</span>
+      </a>
+    </div>
+
+    <div class="utility-actions">
+      <a href="#admissions" class="admissions-link">
+        <span class="admissions-badge">Admissions 2026–27 Open</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .utility-strip {
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-contrast);
+    font-size: var(--text-xs);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .utility-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 38px;
+    padding-block: 2px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contact-items {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    min-width: 0;
+  }
+
+  .utility-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #E2E8F0;
+    text-decoration: none;
+    min-height: 44px;
+    padding-inline: 4px;
+  }
+
+  .utility-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+
+  .utility-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .admissions-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .admissions-badge {
+    background-color: var(--color-accent);
+    color: var(--color-accent-contrast);
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    display: inline-block;
+  }
+
+  .admissions-link:hover .admissions-badge {
+    background-color: var(--color-accent-hover);
+  }
+
+  /* Responsive 360px collapse */
+  @media (max-width: 640px) {
+    .utility-content {
+      min-height: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-inline: 0;
+    }
+
+    .contact-items {
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    .email-item {
+      display: none; /* Hide email on small screens to conserve first screen */
+    }
+
+    .utility-link {
+      padding-inline: 0;
+    }
+
+    .utility-link span {
+      font-size: 13px;
+    }
+
+    .admissions-badge {
+      font-size: 12px;
+      padding: 2px 8px;
+    }
+  }
+</style>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "slide-campus",
+    "image": "/images/hero.jpg",
+    "alt": {
+      "en": "Historic academic school campus building and entrance courtyard",
+      "ml": "സ്കൂൾ പ്രധാന കെട്ടിടവും അഡ്മിനിസ്ട്രേറ്റീവ് കോംപ്ലക്സും"
+    },
+    "caption": {
+      "en": "Historic Main Academic Block & Courtyard",
+      "ml": "പ്രധാന അക്കാദമിക് ബ്ലോക്കും ഓഫീസ് മന്ദിരവും"
+    }
+  },
+  {
+    "id": "slide-classroom",
+    "image": "/images/classroom.jpg",
+    "alt": {
+      "en": "Secondary section classroom desks and instructional blackboard",
+      "ml": "ഹൈസ്കൂൾ ക്ലാസ്റൂം"
+    },
+    "caption": {
+      "en": "Secondary Section Classrooms (Classes 8–10)",
+      "ml": "ഹൈസ്കൂൾ ക്ലാസ്റൂമുകൾ (ക്ലാസ് 8–10)"
+    }
+  },
+  {
+    "id": "slide-science-lab",
+    "image": "/images/science-lab.jpg",
+    "alt": {
+      "en": "Higher Secondary science laboratory equipment and glassware",
+      "ml": "സയൻസ് ലബോറട്ടറി ഉപകരണങ്ങൾ"
+    },
+    "caption": {
+      "en": "Higher Secondary Science Laboratory",
+      "ml": "ഹയർ സെക്കൻഡറി സയൻസ് ലബോറട്ടറി"
+    }
+  },
+  {
+    "id": "slide-library",
+    "image": "/images/library.jpg",
+    "alt": {
+      "en": "School reference library and reading room with bookshelves",
+      "ml": "സ്കൂൾ റഫറൻസ് ലൈബ്രറി"
+    },
+    "caption": {
+      "en": "Central Reference Library & Reading Room",
+      "ml": "സെൻട്രൽ റഫറൻസ് ലൈബ്രറി"
+    }
+  },
+  {
+    "id": "slide-sports",
+    "image": "/images/sports.jpg",
+    "alt": {
+      "en": "Athletic running track and school physical education grounds",
+      "ml": "സ്കൂൾ കളിസ്ഥലവും അത്‌ലറ്റിക് ട്രാക്കും"
+    },
+    "caption": {
+      "en": "Athletics Track & Physical Education Grounds",
+      "ml": "സ്പോർട്സ് ഗ്രൗണ്ടും അത്‌ലറ്റിക് ട്രാക്കും"
+    }
+  }
+]

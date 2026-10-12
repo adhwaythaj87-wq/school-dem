@@ -1,0 +1,61 @@
+[
+  {
+    "id": "acad-hs",
+    "title": {
+      "en": "High School Section (Classes 8 to 10)",
+      "ml": "ഹൈസ്കൂൾ വിഭാഗം (ക്ലാസ് 8 മുതൽ 10 വരെ)"
+    },
+    "level": "Secondary",
+    "description": {
+      "en": "Kerala State Board syllabus leading to the Secondary School Leaving Certificate (SSLC) examination. Available in English medium with rigorous lab and co-curricular foundation.",
+      "ml": "എസ്.എസ്.എൽ.സി പരീക്ഷയ്ക്കായുള്ള കേരള സ്റ്റേറ്റ് സിലബസ്. ഇംഗ്ലീഷ്, മലയാളം മാധ്യമങ്ങളിൽ ലഭ്യമാണ്."
+    },
+    "subjects": [
+      { "en": "Languages (First Language Part 1 & 2, English, Hindi)", "ml": "ഭാഷകൾ (മലയാളം, ഇംഗ്ലീഷ്, ഹിന്ദി)" },
+      { "en": "Social Sciences (History, Geography, Civics, Economics)", "ml": "സാമൂഹ്യശാസ്ത്രം" },
+      { "en": "Basic Sciences (Physics, Chemistry, Biology)", "ml": "അടിസ്ഥാന ശാസ്ത്രം (ഫിസിക്സ്, കെമിസ്ട്രി, ബയോളജി)" },
+      { "en": "Mathematics & Information Technology", "ml": "ഗണിതം, ഇൻഫർമേഷൻ ടെക്നോളജി" }
+    ],
+    "seats": 240
+  },
+  {
+    "id": "acad-hss-science",
+    "title": {
+      "en": "Higher Secondary: Science Stream (Classes 11 & 12)",
+      "ml": "ഹയർ സെക്കൻഡറി: സയൻസ് ബാച്ച് (ക്ലാസ് 11 & 12)"
+    },
+    "level": "Higher Secondary",
+    "stream": "Science",
+    "description": {
+      "en": "Designed for students pursuing engineering, medicine, and pure sciences. Features fully-equipped Kerala Higher Secondary Directorate accredited laboratories.",
+      "ml": "എഞ്ചിനീയറിംഗ്, മെഡിക്കൽ, ശാസ്ത്ര വിഷയങ്ങളിലെ ഉന്നത പഠനത്തിനായുള്ള രണ്ട് കോമ്പിനേഷനുകൾ."
+    },
+    "subjects": [
+      { "en": "Combination I (PCMB): Physics, Chemistry, Mathematics, Biology", "ml": "കോമ്പിനേഷൻ 1: ഫിസിക്സ്, കെമിസ്ട്രി, മാത്തമാറ്റിക്സ്, ബയോളജി" },
+      { "en": "Combination II (PCMC): Physics, Chemistry, Mathematics, Computer Science", "ml": "കോമ്പിനേഷൻ 2: ഫിസിക്സ്, കെമിസ്ട്രി, മാത്തമാറ്റിക്സ്, കമ്പ്യൂട്ടർ സയൻസ്" },
+      { "en": "Compulsory Part I: English", "ml": "പാർട്ട് 1: ഇംഗ്ലീഷ്" },
+      { "en": "Compulsory Part II: Malayalam / Hindi", "ml": "പാർട്ട് 2: മലയാളം / ഹിന്ദി" }
+    ],
+    "seats": 120
+  },
+  {
+    "id": "acad-hss-commerce",
+    "title": {
+      "en": "Higher Secondary: Commerce Stream (Classes 11 & 12)",
+      "ml": "ഹയർ സെക്കൻഡറി: കൊമേഴ്സ് ബാച്ച് (ക്ലാസ് 11 & 12)"
+    },
+    "level": "Higher Secondary",
+    "stream": "Commerce",
+    "description": {
+      "en": "Prepares students for commerce, business management, chartered accountancy, and economics with practical accounting software training.",
+      "ml": "ചാർട്ടേഡ് അക്കൗണ്ടൻസി, ബിസിനസ് മാനേജ്‌മെന്റ്, സാമ്പത്തിക ശാസ്ത്ര മേഖലകളിലേക്കുള്ള കോഴ്സ്."
+    },
+    "subjects": [
+      { "en": "Core: Accountancy, Business Studies, Economics", "ml": "പ്രധാന വിഷയങ്ങൾ: അക്കൗണ്ടൻസി, ബിസിനസ് സ്റ്റഡീസ്, ഇക്കണോമിക്സ്" },
+      { "en": "Elective: Computer Applications / Mathematics", "ml": "ഐച്ഛിക വിഷയം: കമ്പ്യൂട്ടർ ആപ്ലിക്കേഷൻസ്" },
+      { "en": "Compulsory Part I: English", "ml": "പാർട്ട് 1: ഇംഗ്ലീഷ്" },
+      { "en": "Compulsory Part II: Malayalam / Hindi", "ml": "പാർട്ട് 2: മലയാളം / ഹിന്ദി" }
+    ],
+    "seats": 60
+  }
+]

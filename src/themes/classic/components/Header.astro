@@ -1,0 +1,495 @@
+---
+import siteConfig from '../../../site.config.json';
+import Icon from './Icon.astro';
+
+interface Props {
+  currentLang?: 'en';
+}
+
+const schoolTitle = siteConfig.schoolName.en;
+const schoolLocation = siteConfig.location.en;
+const shortName = siteConfig.shortName.en;
+---
+
+<header class="site-header" role="banner">
+  <div class="container header-container">
+    <!-- Brand / Crest & School Identity -->
+    <a href="/" class="brand-link" aria-label={`${schoolTitle}, ${schoolLocation}`}>
+      <img
+        src="/images/crest.svg"
+        alt="School Emblem"
+        width="44"
+        height="50"
+        class="school-crest"
+      />
+      <div class="brand-text">
+        <span class="school-name">
+          <span class="name-full">{schoolTitle}</span>
+          <span class="name-short">{shortName}</span>
+        </span>
+        <span class="school-meta">
+          {schoolLocation} • <span class="affiliation-badge">Kerala Board (Estd. {siteConfig.foundedYear})</span>
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <ul class="nav-list" role="list">
+        {siteConfig.navigation.map((item) => (
+          <li class="nav-item">
+            <a href={item.path} class="nav-link">
+              {item.label.en}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href="#contact" class="btn btn-primary nav-cta">
+        Enquire
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button (>=44px touch target) -->
+    <button
+      id="drawer-toggle"
+      type="button"
+      class="mobile-menu-btn"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+      aria-label="Open mobile navigation menu"
+    >
+      <Icon name="menu" size={26} class="menu-open-icon" />
+      <Icon name="x" size={26} class="menu-close-icon" />
+    </button>
+  </div>
+
+  <!-- Mobile Accessible Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <div class="drawer-header">
+        <div class="drawer-brand">
+          <img src="/images/crest.svg" alt="" width="36" height="40" />
+          <span class="drawer-title">{shortName}</span>
+        </div>
+        <button
+          id="drawer-close"
+          type="button"
+          class="drawer-close-btn"
+          aria-label="Close navigation menu"
+        >
+          <Icon name="x" size={24} />
+        </button>
+      </div>
+
+      <nav class="drawer-nav" aria-label="Mobile Menu">
+        <ul class="drawer-list" role="list">
+          {siteConfig.navigation.map((item) => (
+            <li>
+              <a href={item.path} class="drawer-link">
+                <span>{item.label.en}</span>
+                <Icon name="chevron-right" size={16} />
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div class="drawer-footer-actions">
+          <a href="#admissions" class="btn btn-accent drawer-action-btn">
+            Admission Guidelines 2026–27
+          </a>
+          <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} class="btn btn-outline drawer-action-btn">
+            <Icon name="phone" size={16} />
+            <span>{siteConfig.contact.phone}</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Accessible Drawer Controller with keyboard trap and Esc key support
+  const toggleBtn = document.getElementById('drawer-toggle');
+  const closeBtn = document.getElementById('drawer-close');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const drawer = document.getElementById('mobile-drawer');
+  const drawerLinks = drawer?.querySelectorAll('a');
+
+  function openDrawer() {
+    if (!drawer || !toggleBtn) return;
+    drawer.classList.add('is-open');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+
+  function closeDrawer() {
+    if (!drawer || !toggleBtn) return;
+    drawer.classList.remove('is-open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    toggleBtn.focus();
+  }
+
+  toggleBtn?.addEventListener('click', () => {
+    const isOpen = drawer?.classList.contains('is-open');
+    isOpen ? closeDrawer() : openDrawer();
+  });
+
+  closeBtn?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
+
+  drawerLinks?.forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('is-open')) {
+      closeDrawer();
+    }
+  });
+</script>
+
+<style>
+  .site-header {
+    background-color: var(--color-surface);
+    border-bottom: 2px solid var(--color-accent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+    padding-block: var(--space-2);
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .school-crest {
+    width: 44px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .name-short {
+    display: none;
+  }
+
+  .school-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .school-meta {
+    font-size: 12.5px;
+    color: var(--color-text-secondary);
+    margin-top: 2px;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .affiliation-badge {
+    color: var(--color-text-muted);
+  }
+
+  /* Desktop Navigation */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    min-height: 44px;
+  }
+
+  .nav-link:hover {
+    background-color: var(--color-surface-subtle);
+    color: var(--color-primary-light);
+  }
+
+  .nav-cta {
+    min-height: 40px;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  /* Mobile button: strictly >= 44px */
+  .mobile-menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  .menu-close-icon {
+    display: none;
+  }
+
+  /* Mobile Drawer */
+  .mobile-drawer {
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    .school-name {
+      font-size: 1rem;
+    }
+
+    .school-meta {
+      font-size: 12.5px;
+    }
+
+    .school-crest {
+      width: 40px;
+      height: 46px;
+    }
+
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      overflow: hidden;
+    }
+
+    .mobile-drawer.is-open {
+      display: block;
+    }
+
+    .drawer-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 26, 45, 0.6);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .mobile-drawer.is-open .drawer-backdrop {
+      opacity: 1;
+    }
+
+    .drawer-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 85%;
+      max-width: 320px;
+      background: var(--color-surface);
+      box-shadow: var(--shadow-lg);
+      transform: translateX(100%);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      padding: var(--space-4);
+      overflow-y: auto;
+    }
+
+    .mobile-drawer.is-open .drawer-panel {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .drawer-brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .drawer-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: var(--text-base);
+    }
+
+    .drawer-close-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: none;
+      color: var(--color-primary);
+      cursor: pointer;
+    }
+
+    .drawer-list {
+      list-style: none;
+      margin-top: var(--space-4);
+    }
+
+    .drawer-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      padding: var(--space-3) var(--space-2);
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .drawer-link:hover {
+      color: var(--color-primary);
+      background-color: var(--color-surface-subtle);
+    }
+
+    .drawer-footer-actions {
+      margin-top: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .drawer-action-btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .name-full {
+      display: none;
+    }
+
+    .name-short {
+      display: inline;
+    }
+
+    .header-container {
+      min-height: 56px;
+      gap: 8px;
+      width: 100%;
+      max-width: 100%;
+      justify-content: space-between;
+    }
+
+    .brand-link {
+      flex: 1 1 auto;
+      max-width: calc(100% - 52px);
+      min-width: 0;
+      gap: 8px;
+    }
+
+    .school-crest {
+      width: 36px;
+      height: 42px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      min-width: 0;
+      max-width: calc(100% - 44px);
+      overflow: hidden;
+    }
+
+    .school-name {
+      font-size: 0.9375rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .school-meta {
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .mobile-menu-btn {
+      width: 44px;
+      height: 44px;
+      margin-left: auto;
+      flex-shrink: 0;
+      display: flex;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .header-container {
+      padding-inline: 0;
+    }
+
+    .brand-link {
+      max-width: calc(100% - 48px);
+    }
+
+    .mobile-menu-btn {
+      width: 44px;
+      height: 44px;
+    }
+  }
+</style>

@@ -1,0 +1,164 @@
+---
+import Figure from './Figure.astro';
+
+interface Props {
+  currentLang?: string;
+}
+---
+
+<section class="principal-section" id="principal" aria-labelledby="principal-heading">
+  <div class="container">
+    <div class="principal-grid">
+      <div class="principal-media">
+        <Figure
+          src="/images/principal.jpg"
+          alt="Rev. Fr. Mathew Karottu, Principal of Mar Baselios Memorial Higher Secondary School"
+          aspectRatio="4/3"
+          class="principal-photo"
+        />
+        <div class="principal-caption">
+          <strong class="principal-name">Rev. Fr. Mathew Karottu</strong>
+          <span class="principal-degrees">M.Sc., M.Ed., M.Phil.</span>
+          <span class="principal-role">Principal & Head of Institution</span>
+        </div>
+      </div>
+
+      <div class="principal-letter">
+        <span class="section-tag">FROM THE PRINCIPAL'S DESK</span>
+        <h2 id="principal-heading" class="principal-title">
+          Seventy years rooted in disciplined study and quiet service
+        </h2>
+
+        <div class="principal-prose">
+          <p>
+            Dear Parents, Guardians, and Students,
+          </p>
+          <p>
+            Founded in 1954, Mar Baselios Memorial Higher Secondary School was established to offer rigorous, reliable secondary education to children from Pala and surrounding panchayats. We maintain a straightforward approach to schooling: steady daily attendance, careful attention to the state board syllabus, and a quiet insistence on honesty and mutual respect.
+          </p>
+          <p>
+            Our teachers work closely with each class, identifying learning difficulties early in the term rather than waiting for board examinations. Whether in our science laboratories, library, or classrooms, our priority remains the steady intellectual and personal development of each student under our care.
+          </p>
+        </div>
+
+        <div class="letter-signoff">
+          <span class="signoff-signature">Fr. Mathew Karottu</span>
+          <span class="signoff-title">Principal, MBM HSS Pala</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .principal-section {
+    background-color: var(--color-surface);
+    padding-block: var(--space-10);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .principal-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .principal-media {
+    background-color: var(--color-surface-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3);
+  }
+
+  .principal-photo {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .principal-caption {
+    margin-top: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .principal-name {
+    font-size: var(--text-base);
+    color: var(--color-primary-dark);
+    font-weight: 700;
+  }
+
+  .principal-degrees {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+  }
+
+  .principal-role {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .principal-letter {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-tag {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  .principal-title {
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-4);
+  }
+
+  .principal-prose {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+  }
+
+  .principal-prose p {
+    margin-bottom: var(--space-3);
+  }
+
+  .letter-signoff {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px dashed var(--color-border);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signoff-signature {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .signoff-title {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 840px) {
+    .principal-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    .principal-media {
+      max-width: 320px;
+    }
+  }
+</style>

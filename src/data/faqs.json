@@ -1,0 +1,35 @@
+[
+  {
+    "id": "faq-01",
+    "question": {
+      "en": "What is the procedure for obtaining a Transfer Certificate (TC)?",
+      "ml": "ട്രാൻസ്ഫർ സർട്ടിഫിക്കറ്റ് (ടി.സി) ലഭിക്കുന്നതിനുള്ള നടപടിക്രമങ്ങൾ എന്തൊക്കെയാണ്?"
+    },
+    "answer": {
+      "en": "Parents must submit a written application to the Headmaster/Principal along with clearance of all library and laboratory dues. TCs are issued within 3 working days.",
+      "ml": "രക്ഷിതാക്കൾ പ്രിൻസിപ്പലിന് രേഖാമൂലം അപേക്ഷ സമർപ്പിക്കുകയും ലൈബ്രറി, ലാബ് ബാധ്യതകൾ തീർക്കുകയും വേണം. 3 പ്രവൃത്തി ദിവസങ്ങൾക്കുള്ളിൽ ടി.സി ലഭ്യമാകും."
+    }
+  },
+  {
+    "id": "faq-02",
+    "question": {
+      "en": "Are school bus transportation facilities available across Pala municipal limits?",
+      "ml": "പാലാ മുനിസിപ്പാലിറ്റി പരിധിയിൽ സ്കൂൾ ബസ് സൗകര്യം ലഭ്യമാണോ?"
+    },
+    "answer": {
+      "en": "Yes, the school operates 6 dedicated bus routes covering Pala, Bharananganam, Ramapuram, Kidangoor, and neighboring areas. Route details and bus fees are available at the office counter.",
+      "ml": "അതെ, പാലാ, ഭരണങ്ങാനം, രാമപുരം, കിടങ്ങൂർ തുടങ്ങി സമീപ പ്രദേശങ്ങളിലേക്ക് 6 റൂട്ടുകളിൽ സ്കൂൾ ബസ് സർവീസ് നടത്തുന്നുണ്ട്."
+    }
+  },
+  {
+    "id": "faq-03",
+    "question": {
+      "en": "Is attendance compulsory for Higher Secondary science practical sessions?",
+      "ml": "ഹയർ സെക്കൻഡറി സയൻസ് പ്രാക്ടിക്കൽ ക്ലാസുകളിൽ ഹാജർ നിർബന്ധമാണോ?"
+    },
+    "answer": {
+      "en": "Yes. As per Kerala Higher Secondary Directorate regulations, a minimum of 80% practical attendance is mandatory to appear for the board practical examinations.",
+      "ml": "അതെ. ഡയറക്ടറേറ്റ് ചട്ടപ്രകാരം പ്രാക്ടിക്കൽ പരീക്ഷകൾക്ക് ഹാജരാകാൻ 80% പ്രാക്ടിക്കൽ ഹാജർ നിർബന്ധമാണ്."
+    }
+  }
+]

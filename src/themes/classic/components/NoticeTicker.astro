@@ -1,0 +1,185 @@
+---
+import { getCollection } from 'astro:content';
+import { resolveI18n } from '../../../content.config';
+import Icon from './Icon.astro';
+
+interface Props {
+  currentLang?: string;
+}
+
+const allNotices = await getCollection('notices');
+// Pick first urgent notice, or first notice in list
+const topNotice = allNotices.find(n => n.data.urgent) || allNotices[0];
+
+const resolved = topNotice ? resolveI18n(topNotice.data.title) : null;
+const badgeText = 'URGENT CIRCULAR';
+const pauseAriaLabel = 'Pause or play notice announcement';
+---
+
+{topNotice && (
+  <aside class="notice-ticker-bar" aria-label="Urgent Announcement">
+    <div class="container ticker-container">
+      <div class="ticker-badge-wrap">
+        <span class="ticker-badge">{badgeText}</span>
+      </div>
+
+      <div class="ticker-message" id="ticker-content">
+        <a href={topNotice.data.fileUrl || '#notices'} class="ticker-link">
+          <span class="ticker-text">{resolved?.text}</span>
+          {resolved?.isFallback && (
+            <span class="lang-fallback-tag" title="Notice available only in English">English only</span>
+          )}
+        </a>
+      </div>
+
+      <div class="ticker-controls">
+        <button
+          id="ticker-toggle-btn"
+          type="button"
+          class="ticker-btn"
+          aria-pressed="false"
+          aria-label={pauseAriaLabel}
+          title={pauseAriaLabel}
+        >
+          <Icon name="pause" size={14} class="pause-icon" />
+          <Icon name="play" size={14} class="play-icon" />
+        </button>
+      </div>
+    </div>
+  </aside>
+)}
+
+<script>
+  const toggleBtn = document.getElementById('ticker-toggle-btn');
+  const content = document.getElementById('ticker-content');
+  let isPaused = false;
+
+  toggleBtn?.addEventListener('click', () => {
+    isPaused = !isPaused;
+    toggleBtn.setAttribute('aria-pressed', String(isPaused));
+    if (content) {
+      if (isPaused) {
+        content.classList.add('is-paused');
+      } else {
+        content.classList.remove('is-paused');
+      }
+    }
+  });
+</script>
+
+<style>
+  .notice-ticker-bar {
+    background-color: var(--color-alert-light);
+    border-bottom: 1px solid var(--color-alert-border);
+    color: var(--color-text);
+    font-size: var(--text-xs);
+    position: relative;
+    z-index: 90;
+  }
+
+  .ticker-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-height: 40px;
+    padding-block: 4px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .ticker-badge-wrap {
+    flex-shrink: 0;
+  }
+
+  .ticker-badge {
+    background-color: var(--color-alert);
+    color: var(--color-alert-contrast);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.04em;
+    display: inline-block;
+  }
+
+  .ticker-message {
+    flex: 1 1 0%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .ticker-link {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: 13.5px;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .ticker-link:hover {
+    text-decoration: underline;
+    color: var(--color-alert);
+  }
+
+  .ticker-controls {
+    flex-shrink: 0;
+  }
+
+  .ticker-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid rgba(185, 28, 28, 0.25);
+    border-radius: var(--radius-sm);
+    color: var(--color-alert);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .ticker-btn:hover {
+    background-color: rgba(185, 28, 28, 0.1);
+  }
+
+  .play-icon {
+    display: none;
+  }
+
+  .ticker-btn[aria-pressed="true"] .pause-icon {
+    display: none;
+  }
+
+  .ticker-btn[aria-pressed="true"] .play-icon {
+    display: block;
+  }
+
+  @media (max-width: 480px) {
+    .ticker-container {
+      gap: 6px;
+      min-height: 36px;
+      padding-inline: 0;
+      justify-content: space-between;
+    }
+
+    .ticker-badge {
+      font-size: 11.5px;
+      padding: 2px 5px;
+    }
+
+    .ticker-link {
+      font-size: 12.5px;
+    }
+
+    .ticker-btn {
+      width: 28px;
+      height: 28px;
+    }
+  }
+</style>

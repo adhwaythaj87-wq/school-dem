@@ -1,0 +1,52 @@
+[
+  {
+    "id": "gal-01",
+    "title": {
+      "en": "Historic Main Academic Block and Administrative Courtyard",
+      "ml": "പ്രധാന അക്കാദമിക് കെട്ടിടം"
+    },
+    "image": "/images/hero.jpg",
+    "category": "Campus",
+    "aspectRatio": "16/9"
+  },
+  {
+    "id": "gal-02",
+    "title": {
+      "en": "Higher Secondary Chemistry & Physics Laboratory Session",
+      "ml": "സയൻസ് ലബോറട്ടറി"
+    },
+    "image": "/images/science-lab.jpg",
+    "category": "Academics",
+    "aspectRatio": "4/3"
+  },
+  {
+    "id": "gal-03",
+    "title": {
+      "en": "Central Reference Library & Silent Reading Hall",
+      "ml": "റഫറൻസ് ലൈബ്രറി"
+    },
+    "image": "/images/library.jpg",
+    "category": "Facilities",
+    "aspectRatio": "4/3"
+  },
+  {
+    "id": "gal-04",
+    "title": {
+      "en": "Classroom Instruction and Collaborative Student Study",
+      "ml": "ക്ലാസ്റൂം പഠനം"
+    },
+    "image": "/images/classroom.jpg",
+    "category": "Classrooms",
+    "aspectRatio": "16/10"
+  },
+  {
+    "id": "gal-05",
+    "title": {
+      "en": "Annual Sports Day Athletics and Track Events",
+      "ml": "വാർഷിക കായിക മേള"
+    },
+    "image": "/images/sports.jpg",
+    "category": "Sports",
+    "aspectRatio": "16/9"
+  }
+]

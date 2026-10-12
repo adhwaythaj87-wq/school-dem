@@ -1,0 +1,124 @@
+# Decap CMS Configuration
+# Mar Baselios Memorial Higher Secondary School Template
+# Supports Netlify Git Gateway or GitHub OAuth directly.
+# Works out of the box with Sveltia CMS as well.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Local backend support for offline development (npx decap-server)
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  # 1. Urgent Notices & Circulars
+  - name: "notices"
+    label: "Circulars & Notices"
+    files:
+      - file: "src/data/notices.json"
+        label: "Notice List"
+        name: "notices_list"
+        fields:
+          - label: "Notices"
+            name: "notices"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - label: "Notice Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Malayalam (Optional)", name: "ml", widget: "string", required: false }
+              - { label: "Date (YYYY-MM-DD)", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Category", name: "category", widget: "select", options: ["Academic", "Circular", "Exam", "General"] }
+              - { label: "Urgent (Red Alert Ticker)", name: "urgent", widget: "boolean", default: false }
+              - { label: "Document / Page URL", name: "fileUrl", widget: "string", required: false }
+
+  # 2. News Articles
+  - name: "news"
+    label: "School News"
+    files:
+      - file: "src/data/news.json"
+        label: "News Articles"
+        name: "news_list"
+        fields:
+          - label: "Articles"
+            name: "news"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Malayalam (Optional)", name: "ml", widget: "string", required: false }
+              - { label: "Date (YYYY-MM-DD)", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - label: "Excerpt"
+                name: "excerpt"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Malayalam (Optional)", name: "ml", widget: "text", required: false }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Lead Story (Featured)", name: "featured", widget: "boolean", default: false }
+
+  # 3. Events Calendar
+  - name: "events"
+    label: "Events & Calendar"
+    files:
+      - file: "src/data/events.json"
+        label: "Events Calendar"
+        name: "events_list"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Malayalam (Optional)", name: "ml", widget: "string", required: false }
+              - { label: "Date (YYYY-MM-DD)", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Time", name: "time", widget: "string" }
+              - label: "Venue"
+                name: "venue"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Malayalam (Optional)", name: "ml", widget: "string", required: false }
+
+  # 4. Hero Carousel Slides
+  - name: "hero_slides"
+    label: "Hero Carousel Slides"
+    files:
+      - file: "src/data/hero-slides.json"
+        label: "Carousel Slides"
+        name: "slides_list"
+        fields:
+          - label: "Slides"
+            name: "slides"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Campus Photo", name: "image", widget: "image" }
+              - label: "Alt Text"
+                name: "alt"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Malayalam (Optional)", name: "ml", widget: "string", required: false }
+              - label: "Caption Bar"
+                name: "caption"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Malayalam (Optional)", name: "ml", widget: "string", required: false }
+

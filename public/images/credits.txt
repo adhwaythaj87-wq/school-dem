@@ -1,0 +1,46 @@
+# IMAGE LICENSING AND PHOTOGRAPHY ATTRIBUTION
+# Mar Baselios Memorial Higher Secondary School Template
+# All photos are licensed under standard Unsplash / CC0 terms for commercial and non-commercial use.
+# Must be replaced with client-provided school photographs before production launch.
+
+1. hero.jpg
+   - Subject: Historic academic school campus building and entrance
+   - Author: Vasily Kolotilov
+   - Platform: Unsplash
+   - URL: https://unsplash.com/photos/brown-brick-building-near-green-trees-during-daytime-562774053-701939374585
+   - License: Unsplash License (Free to use for commercial and non-commercial purposes, no permission required)
+
+2. principal.jpg
+   - Subject: Formal academic educator portrait / Headmistress / Principal
+   - Author: LinkedIn Sales Solutions
+   - Platform: Unsplash
+   - URL: https://unsplash.com/photos/woman-in-black-suit-jacket-smiling-544717305-2782549b5136
+   - License: Unsplash License
+
+3. classroom.jpg
+   - Subject: Students seated at desks in secondary classroom
+   - Author: CDC / Unsplash Educational Library
+   - Platform: Unsplash
+   - URL: https://unsplash.com/photos/students-sitting-on-chair-in-front-of-desk-1580582932707-520aed937b7b
+   - License: Unsplash License / Public Domain
+
+4. science-lab.jpg
+   - Subject: Higher Secondary Science laboratory equipment and glassware
+   - Author: National Cancer Institute
+   - Platform: Unsplash
+   - URL: https://unsplash.com/photos/laboratory-glassware-with-liquid-1532094349884-543bc11b234d
+   - License: Unsplash License / Public Domain
+
+5. library.jpg
+   - Subject: Academic reference library and reading room
+   - Author: Giammarco Boscaro
+   - Platform: Unsplash
+   - URL: https://unsplash.com/photos/books-on-shelves-in-library-1521587760476-6c12a4b040da
+   - License: Unsplash License
+
+6. sports.jpg
+   - Subject: School athletic track and outdoor physical education grounds
+   - Author: Austris Augusts
+   - Platform: Unsplash
+   - URL: https://unsplash.com/photos/running-track-lane-1461896836934-ffe607ba8211
+   - License: Unsplash License

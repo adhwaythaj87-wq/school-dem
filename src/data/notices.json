@@ -1,0 +1,41 @@
+[
+  {
+    "id": "notice-01",
+    "title": {
+      "en": "Higher Secondary Admission Forms 2026–27 distribution commences from 15 May 2026 at school office",
+      "ml": "2026–27 ഹയർ സെക്കൻഡറി പ്രവേശന ഫോമുകളുടെ വിതരണം 2026 മെയ് 15 മുതൽ സ്കൂൾ ഓഫീസിൽ ആരംഭിക്കുന്നു"
+    },
+    "date": "2026-05-10",
+    "category": "Circular",
+    "urgent": true,
+    "fileUrl": "#admissions",
+    "content": {
+      "en": "Applications for Plus One Science and Commerce streams can be collected from the school counter between 9:30 AM and 3:30 PM.",
+      "ml": "പ്ലസ് വൺ സയൻസ്, കൊമേഴ്സ് ബാച്ചുകളിലേക്കുള്ള അപേക്ഷകൾ രാവിലെ 9:30 മുതൽ 3:30 വരെ സ്കൂൾ കൗണ്ടറിൽ നിന്നും ലഭ്യമാണ്."
+    }
+  },
+  {
+    "id": "notice-02",
+    "title": {
+      "en": "SSLC Model Examination revised time schedule and hall allotment issued by Kerala Pareeksha Bhavan"
+    },
+    "date": "2026-04-28",
+    "category": "Exam",
+    "urgent": false,
+    "fileUrl": "#academics",
+    "content": {
+      "en": "Students must report to their respective examination halls 15 minutes before the commencement of the exam. School uniform is mandatory."
+    }
+  },
+  {
+    "id": "notice-03",
+    "title": {
+      "en": "Annual Parent-Teacher Association (PTA) General Body Meeting scheduled for 06 June 2026 at 2:00 PM",
+      "ml": "വാർഷിക പിടിഎ പൊതുയോഗം 2026 ജൂൺ 06 ഉച്ചയ്ക്ക് 2:00 മണിക്ക് സ്കൂൾ ഓഡിറ്റോറിയത്തിൽ നടക്കും"
+    },
+    "date": "2026-04-20",
+    "category": "General",
+    "urgent": false,
+    "fileUrl": "#events"
+  }
+]

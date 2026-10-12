@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 180" width="160" height="180" aria-label="School Crest: Mar Baselios Memorial Higher Secondary School">
+  <!-- Outer Shield Outline in Heritage Maroon and Amber -->
+  <defs>
+    <linearGradient id="shieldMaroon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#541424" />
+      <stop offset="100%" stop-color="#380C17" />
+    </linearGradient>
+  </defs>
+
+  <!-- Crest Shield -->
+  <path d="M 80,12 C 120,12 145,22 145,55 C 145,115 105,150 80,165 C 55,150 15,115 15,55 C 15,22 40,12 80,12 Z" 
+        fill="url(#shieldMaroon)" stroke="#C9822B" stroke-width="4" stroke-linejoin="round" />
+
+  <!-- Inner Amber Inset Border -->
+  <path d="M 80,20 C 114,20 137,28 137,56 C 137,108 102,140 80,154 C 58,140 23,108 23,56 C 23,28 46,20 80,20 Z" 
+        fill="none" stroke="#C9822B" stroke-width="1.5" stroke-dasharray="4,2" />
+
+  <!-- Academic Cross at Apex -->
+  <path d="M 76,28 L 84,28 L 84,36 L 94,36 L 94,44 L 84,44 L 84,62 L 76,62 L 76,44 L 66,44 L 66,36 L 76,36 Z" 
+        fill="#C9822B" />
+
+  <!-- Open Book of Knowledge -->
+  <!-- Left Page -->
+  <path d="M 52,78 C 62,75 72,77 78,82 L 78,104 C 72,99 62,97 52,100 Z" 
+        fill="#FFFFFF" stroke="#541424" stroke-width="1.5" />
+  <!-- Right Page -->
+  <path d="M 108,78 C 98,75 88,77 82,82 L 82,104 C 88,99 98,97 108,100 Z" 
+        fill="#FFFFFF" stroke="#541424" stroke-width="1.5" />
+  <!-- Book spine line -->
+  <line x1="80" y1="81" x2="80" y2="105" stroke="#C9822B" stroke-width="2" />
+
+  <!-- Lamp of Wisdom / Knowledge Flame -->
+  <path d="M 80,110 C 74,116 73,124 78,128 C 80,129 82,128 82,126 C 82,123 79,120 81,116 C 83,120 87,122 86,126 C 85,129 80,131 80,131 C 87,130 89,122 84,115 Z" 
+        fill="#C9822B" />
+  <path d="M 68,131 C 72,128 88,128 92,131 L 90,136 L 70,136 Z" 
+        fill="#C9822B" />
+  <line x1="65" y1="137" x2="95" y2="137" stroke="#C9822B" stroke-width="2" />
+
+  <!-- ESTD Ribbon at Bottom -->
+  <rect x="50" y="142" width="60" height="15" rx="2" fill="#C9822B" />
+  <text x="80" y="153" font-family="'Source Serif 4', Georgia, serif" font-size="9" font-weight="700" fill="#380C17" text-anchor="middle" letter-spacing="1">ESTD 1954</text>
+</svg>

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "top-01",
+    "name": "Ananya S. Kumar (Sample Data)",
+    "stream": "Plus Two Science (PCMB)",
+    "score": "1200 / 1200 (Full A+)",
+    "year": "2025",
+    "achievement": {
+      "en": "School First Rank & State Level Distinction",
+      "ml": "സ്കൂൾ ഒന്നാം റാങ്കും സംസ്ഥാനതല ഡിസ്റ്റിങ്ഷനും"
+    }
+  },
+  {
+    "id": "top-02",
+    "name": "Rohan George Mathew (Sample Data)",
+    "stream": "Plus Two Commerce",
+    "score": "1192 / 1200 (Full A+)",
+    "year": "2025",
+    "achievement": {
+      "en": "Commerce Stream Topper",
+      "ml": "കൊമേഴ്സ് വിഭാഗം ഒന്നാം സ്ഥാനം"
+    }
+  },
+  {
+    "id": "top-03",
+    "name": "Devika Nambiar (Sample Data)",
+    "stream": "SSLC (Class 10)",
+    "score": "Full A+ in all 10 Subjects",
+    "year": "2025",
+    "achievement": {
+      "en": "SSLC Board High Distinction",
+      "ml": "എസ്.എസ്.എൽ.സി എല്ലാ വിഷയങ്ങളിലും എ പ്ലസ്"
+    }
+  },
+  {
+    "id": "top-04",
+    "name": "Abhishek V. Nair (Sample Data)",
+    "stream": "Plus Two Science (PCMC)",
+    "score": "1188 / 1200 (Full A+)",
+    "year": "2025",
+    "achievement": {
+      "en": "Computer Science Stream Topper",
+      "ml": "കമ്പ്യൂട്ടർ സയൻസ് വിഭാഗം ഒന്നാം സ്ഥാനം"
+    }
+  }
+]

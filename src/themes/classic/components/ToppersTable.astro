@@ -1,0 +1,181 @@
+---
+import { getCollection } from 'astro:content';
+import { resolveI18n } from '../../../content.config';
+
+interface Props {
+  currentLang?: string;
+}
+
+const allToppers = await getCollection('toppers');
+---
+
+<section class="toppers-section" id="toppers" aria-labelledby="toppers-heading">
+  <div class="container">
+    <div class="toppers-header">
+      <div>
+        <span class="section-tag">
+          ACADEMIC MERIT
+        </span>
+        <h2 id="toppers-heading" class="toppers-title">
+          Recent Board Examination Achievers (Merit Roll)
+        </h2>
+      </div>
+      <span class="demo-table-tag">[Sample Student Data - Replace Before Launch]</span>
+    </div>
+
+    <!-- Simple, high-contrast, accessible table -->
+    <div class="table-responsive-container">
+      <table class="toppers-table" aria-label="School Toppers Merit Board">
+        <thead>
+          <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Stream / Examination</th>
+            <th scope="col">Marks / Grade</th>
+            <th scope="col">Distinction</th>
+          </tr>
+        </thead>
+        <tbody>
+          {allToppers.map((topper) => {
+            const ach = resolveI18n(topper.data.achievement);
+            return (
+              <tr>
+                <td class="cell-year"><strong>{topper.data.year}</strong></td>
+                <td class="cell-name">{topper.data.name}</td>
+                <td class="cell-stream">{topper.data.stream}</td>
+                <td class="cell-score"><span class="score-badge">{topper.data.score}</span></td>
+                <td class="cell-distinction">
+                  {ach.text}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="toppers-footer-note">
+      <p>
+        Complete subject-wise marks registers and official Kerala Pareeksha Bhavan gazettes are maintained at the school office.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .toppers-section {
+    background-color: var(--color-surface);
+    padding-block: var(--space-10);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .toppers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-6);
+  }
+
+  .section-tag {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  .toppers-title {
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    color: var(--color-primary-dark);
+  }
+
+  .demo-table-tag {
+    font-size: 12.5px;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .table-responsive-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+  }
+
+  .toppers-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+  }
+
+  .toppers-table th {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 13.5px;
+    padding: var(--space-3) var(--space-4);
+    letter-spacing: 0.03em;
+  }
+
+  .toppers-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    font-size: 14px;
+    color: var(--color-text);
+  }
+
+  .toppers-table tr:nth-child(even) td {
+    background-color: var(--color-surface-subtle);
+  }
+
+  .cell-year {
+    color: var(--color-primary);
+    width: 10%;
+  }
+
+  .cell-name {
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    width: 25%;
+  }
+
+  .cell-stream {
+    width: 25%;
+  }
+
+  .cell-score {
+    width: 20%;
+  }
+
+  .score-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: #EBF3FA;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    border: 1px solid #C8DCF0;
+  }
+
+  .cell-distinction {
+    width: 20%;
+    color: var(--color-text-secondary);
+  }
+
+  .toppers-footer-note {
+    margin-top: var(--space-3);
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .toppers-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-2);
+    }
+  }
+</style>

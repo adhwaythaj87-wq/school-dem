@@ -1,0 +1,147 @@
+---
+import { getCollection } from 'astro:content';
+import { resolveI18n } from '../../../content.config';
+import Figure from './Figure.astro';
+
+interface Props {
+  currentLang?: string;
+}
+
+const galleryItems = await getCollection('gallery');
+---
+
+<section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="gallery-header">
+      <span class="section-tag">
+        CAMPUS LIFE & FACILITIES
+      </span>
+      <h2 id="gallery-heading" class="gallery-title">
+        Glimpses of Daily Life and Academic Work
+      </h2>
+      <p class="gallery-sub">
+        Laboratories, lecture halls, campus grounds, and student activities in Pala.
+      </p>
+    </div>
+
+    <!-- Asymmetrical Editorial Grid -->
+    <div class="gallery-editorial-grid">
+      {galleryItems.map((item, idx) => {
+        const title = resolveI18n(item.data.title);
+        const isLead = idx === 0;
+        return (
+          <div class={`gallery-item ${isLead ? 'gallery-item-featured' : ''}`}>
+            <Figure
+              src={item.data.image}
+              alt={title.text}
+              aspectRatio={isLead ? '16/9' : (item.data.aspectRatio as any || '4/3')}
+              caption={title.text}
+              class="gallery-photo"
+            />
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery-section {
+    background-color: var(--color-surface-subtle);
+    padding-block: var(--space-10);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .gallery-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .section-tag {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  .gallery-title {
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-2);
+  }
+
+  .gallery-sub {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+  }
+
+  /* Asymmetric layout */
+  .gallery-editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-5);
+    align-items: start;
+  }
+
+  /* Featured item spans 7 columns */
+  .gallery-item:nth-child(1) {
+    grid-column: span 7;
+  }
+
+  /* Second item spans 5 columns */
+  .gallery-item:nth-child(2) {
+    grid-column: span 5;
+  }
+
+  /* Third item spans 4 columns */
+  .gallery-item:nth-child(3) {
+    grid-column: span 4;
+  }
+
+  /* Fourth item spans 4 columns */
+  .gallery-item:nth-child(4) {
+    grid-column: span 4;
+  }
+
+  /* Fifth item spans 4 columns */
+  .gallery-item:nth-child(5) {
+    grid-column: span 4;
+  }
+
+  .gallery-item {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3);
+  }
+
+  @media (max-width: 900px) {
+    .gallery-editorial-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5) {
+      grid-column: span 1;
+    }
+
+    .gallery-item:nth-child(1) {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .gallery-editorial-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-item:nth-child(1) {
+      grid-column: span 1;
+    }
+  }
+</style>

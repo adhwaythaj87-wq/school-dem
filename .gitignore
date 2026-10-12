@@ -1,0 +1,29 @@
+# Build outputs
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Root testing artifacts & screenshots
+/*.png
+/capture.cjs
+/diag-server.cjs
+/find-overflow.cjs
+/server.cjs
+/.New folder/
+
+# OS metadata
+.DS_Store
+Thumbs.db

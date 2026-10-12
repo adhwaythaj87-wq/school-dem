@@ -1,0 +1,54 @@
+[
+  {
+    "id": "event-01",
+    "title": {
+      "en": "Praveshanotsavam: School reopening for Academic Year 2026–27",
+      "ml": "പ്രവേശനോത്സവം: 2026–27 പുതിയ അധ്യയന വർഷാരംഭം"
+    },
+    "date": "2026-06-01",
+    "time": "09:30 AM",
+    "venue": {
+      "en": "Main School Auditorium & Classrooms",
+      "ml": "പ്രധാന സ്കൂൾ ഓഡിറ്റോറിയം"
+    }
+  },
+  {
+    "id": "event-02",
+    "title": {
+      "en": "World Environment Day Campus Tree Plantation & Nature Club Rally",
+      "ml": "ലോക പരിസ്ഥിതി ദിനാചരണവും വൃക്ഷത്തൈ നടീലും"
+    },
+    "date": "2026-06-05",
+    "time": "10:00 AM",
+    "venue": {
+      "en": "School Botanical Garden",
+      "ml": "സ്കൂൾ കാമ്പസ്"
+    }
+  },
+  {
+    "id": "event-03",
+    "title": {
+      "en": "First Term Internal Assessment & Mid-Term Examinations",
+      "ml": "ഒന്നാം പാദവാർഷിക പരീക്ഷകൾ"
+    },
+    "date": "2026-08-10",
+    "time": "09:45 AM",
+    "venue": {
+      "en": "Examination Blocks A & B",
+      "ml": "പരീക്ഷാ ഹാളുകൾ"
+    }
+  },
+  {
+    "id": "event-04",
+    "title": {
+      "en": "79th Independence Day Flag Hoisting and NCC Ceremonial Parade",
+      "ml": "സ്വാതന്ത്ര്യദിന പതാക ഉയർത്തലും എൻസിസി പരേഡും"
+    },
+    "date": "2026-08-15",
+    "time": "08:30 AM",
+    "venue": {
+      "en": "School Parade Ground",
+      "ml": "സ്കൂൾ ഗ്രൗണ്ട്"
+    }
+  }
+]

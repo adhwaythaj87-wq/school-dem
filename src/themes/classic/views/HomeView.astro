@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import UtilityStrip from '../components/UtilityStrip.astro';
+import Header from '../components/Header.astro';
+import NoticeTicker from '../components/NoticeTicker.astro';
+import Hero from '../components/Hero.astro';
+import QuickLinks from '../components/QuickLinks.astro';
+import PrincipalsDesk from '../components/PrincipalsDesk.astro';
+import SchoolFacts from '../components/SchoolFacts.astro';
+import NewsEvents from '../components/NewsEvents.astro';
+import AcademicsList from '../components/AcademicsList.astro';
+import ToppersTable from '../components/ToppersTable.astro';
+import PhotoGallery from '../components/PhotoGallery.astro';
+import AdmissionsBand from '../components/AdmissionsBand.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <div slot="header">
+    <UtilityStrip />
+    <Header />
+    <NoticeTicker />
+  </div>
+
+  <!-- 1. Photographic Hero with concrete action headline -->
+  <Hero />
+
+  <!-- 2. Dense Institutional Quick Links Bar -->
+  <QuickLinks />
+
+  <!-- 3. Principal's Message and Portrait -->
+  <PrincipalsDesk />
+
+  <!-- 4. About the School & Key Records Table -->
+  <SchoolFacts />
+
+  <!-- 5. News Dispatches & Events Calendar with Date Blocks -->
+  <NewsEvents />
+
+  <!-- 6. Academic Streams and Course Structure List -->
+  <AcademicsList />
+
+  <!-- 7. Academic Merit Board (Toppers Table) -->
+  <ToppersTable />
+
+  <!-- 8. Asymmetric Editorial Campus Gallery -->
+  <PhotoGallery />
+
+  <!-- 9. Admissions Callout Band with WhatsApp & Prospectus -->
+  <AdmissionsBand />
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,171 @@
+---
+import siteConfig from '../../../site.config.json';
+import Icon from './Icon.astro';
+
+interface Props {
+  currentLang?: string;
+}
+
+const links = siteConfig.quickLinks;
+---
+
+<section class="quick-links-section" aria-label="Essential Institutional Quick Links">
+  <div class="container">
+    <div class="quick-links-bar">
+      <div class="quick-links-header">
+        <span class="quick-links-label">
+          OFFICE SERVICES
+        </span>
+      </div>
+      <div class="quick-links-grid" role="list">
+        {links.map((link) => (
+          <a href={link.url} class="quick-link-item" role="listitem">
+            <span class="link-icon-box">
+              <Icon name={link.icon} size={20} />
+            </span>
+            <span class="link-text">
+              {link.label.en}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .quick-links-section {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding-block: var(--space-4);
+  }
+
+  .quick-links-bar {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+  }
+
+  .quick-links-header {
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-contrast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: var(--space-4);
+    min-width: 140px;
+    flex-shrink: 0;
+  }
+
+  .quick-links-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    flex: 1;
+    divide-x: 1px solid var(--color-border);
+  }
+
+  .quick-link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-3) var(--space-2);
+    min-height: 72px;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-left: 1px solid var(--color-border);
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .quick-link-item:first-child {
+    border-left: none;
+  }
+
+  .quick-link-item:hover {
+    background-color: var(--color-surface-subtle);
+    color: var(--color-accent-hover);
+  }
+
+  .link-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    color: var(--color-primary);
+  }
+
+  .link-text {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  :lang(ml) .link-text, [lang="ml"] .link-text {
+    font-size: 12.5px;
+  }
+
+  /* Responsive 768px & 360px */
+  @media (max-width: 1024px) {
+    .quick-links-bar {
+      flex-direction: column;
+    }
+
+    .quick-links-header {
+      min-height: 36px;
+      padding-block: var(--space-2);
+    }
+
+    .quick-links-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .quick-link-item {
+      border-top: 1px solid var(--color-border);
+      border-left: 1px solid var(--color-border);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .quick-links-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-link-item {
+      min-height: 54px;
+      padding: var(--space-2);
+      flex-direction: row;
+      gap: 10px;
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .link-icon-box {
+      margin-bottom: 0;
+    }
+
+    .link-text {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .quick-links-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .quick-link-item {
+      border-left: none;
+      min-height: 48px;
+    }
+  }
+</style>

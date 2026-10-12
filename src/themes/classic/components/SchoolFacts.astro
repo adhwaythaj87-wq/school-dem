@@ -1,0 +1,223 @@
+---
+import siteConfig from '../../../site.config.json';
+import Figure from './Figure.astro';
+
+interface Props {
+  currentLang?: string;
+}
+
+const facts = [
+  {
+    label: "Year Established",
+    value: "1954 (72 Years of Service)"
+  },
+  {
+    label: "Affiliation & Board",
+    value: `${siteConfig.affiliation.board}`
+  },
+  {
+    label: "High School Code",
+    value: `${siteConfig.affiliation.schoolCode} (Demo Code)`
+  },
+  {
+    label: "Higher Secondary Code",
+    value: `${siteConfig.affiliation.higherSecondaryCode} (Demo Code)`
+  },
+  {
+    label: "Grades Offered",
+    value: "Classes 1 to 12 (LP, UP, HS & HSS)"
+  },
+  {
+    label: "Medium of Instruction",
+    value: "English (Kerala State Syllabus)"
+  },
+  {
+    label: "Student Body (Approx.)",
+    value: "1,450 Students [Sample Placeholder]"
+  },
+  {
+    label: "Teaching & Non-Teaching Staff",
+    value: "68 Staff Members [Sample Placeholder]"
+  }
+];
+---
+
+<section class="facts-section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="facts-header">
+      <span class="section-tag">ABOUT OUR SCHOOL</span>
+      <h2 id="about-heading" class="facts-title">
+        Providing dependable schooling in Meenachil Taluk since 1954
+      </h2>
+    </div>
+
+    <div class="facts-grid">
+      <!-- Left: Institutional Narrative + Classroom photo -->
+      <div class="facts-narrative">
+        <p class="lead-text">
+          Mar Baselios Memorial Higher Secondary School was established to provide sound, principled schooling to young men and women in Pala and neighboring agricultural panchayats. Operating under the corporate management of the Orthodox Syrian Church, the school welcomes students of all backgrounds and faiths.
+        </p>
+
+        <p class="secondary-text">
+          The 4.5-acre campus includes separate laboratories for physics, chemistry, biology, and computer applications, a well-stocked general library, and a full-size football ground. Extracurricular training includes active National Cadet Corps (Army Wing), Junior Red Cross, and National Service Scheme units.
+        </p>
+
+        <Figure
+          src="/images/classroom.jpg"
+          alt="Classroom session at Mar Baselios Memorial Higher Secondary School"
+          aspectRatio="16/9"
+          class="facts-inline-photo"
+          caption="Regular classroom instruction at the high school wing."
+        />
+      </div>
+
+      <!-- Right: Tabular Institutional Records -->
+      <div class="facts-table-wrap">
+        <div class="table-top-bar">
+          <span class="table-bar-title">OFFICIAL INSTITUTIONAL RECORDS</span>
+          <span class="demo-tag">[Demo Placeholders]</span>
+        </div>
+
+        <table class="facts-table" aria-label="Key School Facts">
+          <tbody>
+            {facts.map((item) => (
+              <tr>
+                <th scope="row" class="fact-label">{item.label}</th>
+                <td class="fact-value">{item.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div class="table-note">
+          <strong>Note for Principals:</strong> All statistics, student counts, and code numbers on this preview website are illustrative placeholders and can be updated instantly via `site.config.json` or Decap CMS.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .facts-section {
+    background-color: var(--color-surface-subtle);
+    padding-block: var(--space-10);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .facts-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .section-tag {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  .facts-title {
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    color: var(--color-primary-dark);
+  }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .facts-narrative {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lead-text {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-3);
+  }
+
+  .secondary-text {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-5);
+  }
+
+  .facts-inline-photo {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .facts-table-wrap {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .table-top-bar {
+    background-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .table-bar-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .demo-tag {
+    font-size: 12px;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .facts-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .facts-table th, .facts-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+  .fact-label {
+    width: 42%;
+    background-color: #F8FAFC;
+    color: var(--color-primary-dark);
+    font-weight: 600;
+  }
+
+  .fact-value {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .table-note {
+    padding: var(--space-3) var(--space-4);
+    font-size: 12.5px;
+    color: var(--color-text-muted);
+    background-color: var(--color-surface-subtle);
+    border-top: 1px solid var(--color-border);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .facts-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+</style>

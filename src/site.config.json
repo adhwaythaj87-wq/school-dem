@@ -1,0 +1,96 @@
+{
+  "schoolName": {
+    "en": "Mar Baselios Memorial Higher Secondary School"
+  },
+  "shortName": {
+    "en": "Mar Baselios HSS"
+  },
+  "location": {
+    "en": "Pala, Kottayam, Kerala"
+  },
+  "motto": {
+    "en": "Faith, Truth, and Service"
+  },
+  "foundedYear": 1954,
+  "affiliation": {
+    "board": "Kerala State Board of Education",
+    "schoolCode": "05042",
+    "higherSecondaryCode": "05018",
+    "grades": "Classes 1 to 12 (HS & HSS: Science & Commerce)"
+  },
+  "contact": {
+    "phone": "+91 4822 212450",
+    "altPhone": "+91 4822 212451",
+    "email": "info@example.com",
+    "officeHours": "Monday to Friday: 9:00 AM - 4:30 PM",
+    "address": "College Road, Pala, Kottayam District, Kerala - 686575, India",
+    "whatsappNumber": "919447123450",
+    "whatsappUrl": "https://wa.me/919447123450?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions."
+  },
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15732.123456789!2d76.6800!3d9.7100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cd123456789%3A0x123456789abcdef!2sPala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  "mapExternalUrl": "https://maps.google.com/?q=Pala+Kottayam+Kerala",
+  "theme": "classic",
+  "defaultLanguage": "en",
+  "languages": ["en"],
+  "isDemo": true,
+  "demoDisclaimer": {
+    "en": "Demo website for school preview. All statistical figures and contact numbers are illustrative placeholders."
+  },
+  "socialLinks": [
+    { "name": "Facebook", "url": "https://facebook.com", "icon": "facebook" },
+    { "name": "YouTube", "url": "https://youtube.com", "icon": "youtube" }
+  ],
+  "quickLinks": [
+    {
+      "id": "admissions",
+      "label": { "en": "Admissions" },
+      "url": "#admissions",
+      "icon": "user-plus"
+    },
+    {
+      "id": "fees",
+      "label": { "en": "Fee Payment" },
+      "url": "#admissions",
+      "icon": "credit-card"
+    },
+    {
+      "id": "tc-request",
+      "label": { "en": "TC Application" },
+      "url": "#contact",
+      "icon": "file-text"
+    },
+    {
+      "id": "timetable",
+      "label": { "en": "Exam Timetable" },
+      "url": "#academics",
+      "icon": "calendar"
+    },
+    {
+      "id": "results",
+      "label": { "en": "Board Results" },
+      "url": "#toppers",
+      "icon": "award"
+    },
+    {
+      "id": "bus-routes",
+      "label": { "en": "School Bus Routes" },
+      "url": "#facts",
+      "icon": "bus"
+    },
+    {
+      "id": "calendar",
+      "label": { "en": "Academic Calendar" },
+      "url": "#events",
+      "icon": "calendar-days"
+    }
+  ],
+  "navigation": [
+    { "label": { "en": "Home" }, "path": "/" },
+    { "label": { "en": "About" }, "path": "#about" },
+    { "label": { "en": "Academics" }, "path": "#academics" },
+    { "label": { "en": "Admissions" }, "path": "#admissions" },
+    { "label": { "en": "News & Events" }, "path": "#news-events" },
+    { "label": { "en": "Merit List" }, "path": "#toppers" },
+    { "label": { "en": "Contact" }, "path": "#contact" }
+  ]
+}

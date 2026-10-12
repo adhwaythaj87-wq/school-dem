@@ -1,0 +1,59 @@
+[
+  {
+    "id": "fac-01",
+    "name": {
+      "en": "Rev. Fr. Mathew Karottu",
+      "ml": "റവ. ഫാ. മാത്യു കാരോട്ട്"
+    },
+    "designation": {
+      "en": "Principal & Head of Institution",
+      "ml": "പ്രിൻസിപ്പൽ"
+    },
+    "department": "Administration / Higher Secondary",
+    "qualification": "M.Sc. Mathematics, M.Ed., Phil.",
+    "experienceYears": 24,
+    "photo": "/images/principal.jpg"
+  },
+  {
+    "id": "fac-02",
+    "name": {
+      "en": "Smt. Mary Joseph",
+      "ml": "ശ്രീമതി മേരി ജോസഫ്"
+    },
+    "designation": {
+      "en": "Headmistress (High School Section)",
+      "ml": "ഹെഡ്മിസ്ട്രസ്സ്"
+    },
+    "department": "High School General",
+    "qualification": "M.A. English, B.Ed.",
+    "experienceYears": 21
+  },
+  {
+    "id": "fac-03",
+    "name": {
+      "en": "Sri. K. R. Narayanan Namboothiri",
+      "ml": "ശ്രീ കെ. ആർ. നാരായണൻ നമ്പൂതിരി"
+    },
+    "designation": {
+      "en": "Higher Secondary School Teacher (Physics)",
+      "ml": "എച്ച്.എസ്.എസ്.ടി ഫിസിക്സ്"
+    },
+    "department": "Science",
+    "qualification": "M.Sc. Physics, B.Ed., SET",
+    "experienceYears": 17
+  },
+  {
+    "id": "fac-04",
+    "name": {
+      "en": "Smt. Gracy Thomas",
+      "ml": "ശ്രീമതി ഗ്രേസി തോമസ്"
+    },
+    "designation": {
+      "en": "Higher Secondary School Teacher (Commerce)",
+      "ml": "എച്ച്.എസ്.എസ്.ടി കൊമേഴ്സ്"
+    },
+    "department": "Commerce",
+    "qualification": "M.Com., B.Ed., SET",
+    "experienceYears": 14
+  }
+]
